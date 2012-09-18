@@ -17,6 +17,7 @@
 " What else to do {{{
     " TODO: FIX BLINKING (whitespace check?)
     " TODO: FIX omnicomplete case (sic!)
+    " TODO: what to do with spellfiles incompatibility?
     " TODO: check spellcheck hotkey (also, spellcheck for russian language)
     " TODO: CamelCaseMotion breaks EasyMotion (sic!)
     " TODO: argtextobj breaks spellcheck (sic!!1)
@@ -124,7 +125,6 @@
             " Unicode symbols autoconversion
             Bundle 'UniCycle'
         " }}}
-
         " Colorschemes {{{
             " Probably the best colorscheme ever
             Bundle 'altercation/vim-colors-solarized'
@@ -135,7 +135,6 @@
             Bundle 'jellybeans.vim'
             Bundle 'tpope/vim-vividchalk'
         "}}}
-
         " Languages & frameworks {{{
             " Language agnostic
             Bundle 'thinca/vim-quickrun'
@@ -179,7 +178,6 @@
             "Bundle 'MarcWeber/vim-addon-sql'
             "Bundle 'SQLUtilities'
         " }}}
-
         " Projects and tags {{{
             "!Bundle 'DfrankUtil'
             " Project management
@@ -191,7 +189,6 @@
             " Project search
             "Bundle 'ack.vim'
         " }}}
-
         " Files & buffers {{{
             " Dynamic file search
             Bundle 'git://git.wincent.com/command-t.git'
@@ -210,7 +207,6 @@
             " File explorer
             Bundle 'Shougo/vimfiler'
         " }}}
-
         " Motions & text objects {{{
             " Navigate file easily
             Bundle 'Lokaltog/vim-easymotion'
@@ -219,7 +215,6 @@
             " Move inside function arguments [bugs]
             "Bundle 'argtextobj.vim'
         " }}}
-
         " Misc {{{
             " My vim cannot be so multi(over)-tasked!
             "Bundle 'ironcamel/vimchat'
@@ -230,7 +225,6 @@
             " Manage encoding
             Bundle 'FencView.vim'
         "}}}
-
         " Unused {{{
             " two-panel file manager
             "Bundle 'vimcommander'
@@ -245,7 +239,7 @@
     " }}}
     " Post-init {{{
     if shouldInit == 0
-        echo "Installing Bundles, please ignore key map error messages"
+        echo "Installing Bundles, please ignore key map error messages!"
         echo ""
         :BundleInstall
     endif
@@ -277,7 +271,7 @@
         "" Propietary MS goodness (mmm, tasty!)
         "set guifont=Consolas\ 12
         "" DejaVu Mono, Droid Mono, Ubuntu Mono are fine too
-        " Quickswitch
+        " Quickswitch fonts
         map <F6> :set guifont=Inconsolata\ 12<CR>
         map <F7> :set guifont=Ricty\ 12<CR>
     endif
@@ -532,7 +526,7 @@
 
     " Method
     set foldmethod=syntax
-    set foldlevelstart=1
+    set foldlevelstart=0
 
     " Languages
     let javaScript_fold=1           " JavaScript
