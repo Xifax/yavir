@@ -39,6 +39,18 @@
 
     " Painless scripts management {{{
 
+" install vundle itself
+ let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+
+
     " let's use Vundle instead of pathogen
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
@@ -230,6 +242,14 @@
             Bundle 'ctags.vim'
         " }}}
     " }}}
+
+" updating bundles
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
+
 
     " After scripts's been installed/updated/initialized
     filetype plugin indent on
