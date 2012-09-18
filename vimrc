@@ -1,3 +1,4 @@
+"Intro {{{
 "What is this {{{
     " I am the script of my vim... Actually, no, not quite.
     " So, this is my vimrc file, obviously.
@@ -13,7 +14,6 @@
     " OS: preferably Linux
     " Sources: vimbits.com, github.com, vimcasts.org
 " }}}
-
 " What else to do {{{
     " TODO: FIX BLINKING (whitespace check?)
     " TODO: FIX omnicomplete case (sic!)
@@ -28,28 +28,29 @@
     " TODO: add automatic conversion: -- to long dash for txt and tex
     " TODO: xdebug bindings, shortcuts
 " }}}
-
+" }}}
 " Core {{{
 " Scripts {{{
+    " Initialize Vim bundles and other stuff {{{
 
     " be iMproved
     set nocompatible
     " Required for Vundle shenanigans
     filetype off
 
-    " Painless scripts management {{{
-
-" install vundle itself
- let iCanHazVundle=1
+    " Check, if vundle is installed
+    let shouldInit=1
     let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    " If not, let's initialize this Vim!
     if !filereadable(vundle_readme)
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
         silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        let iCanHazVundle=0
+        echo "Creating backup dir..."
+        silent !mkdir -p ~/.vim/backup
+        let shouldInit=0
     endif
-
 
     " let's use Vundle instead of pathogen
     set rtp+=~/.vim/bundle/vundle/
@@ -58,12 +59,12 @@
     " let Vundle manage Vundle
     Bundle 'gmarik/vundle'
 
-    " Listing all the bundles we want:
-
+    "}}}
     " Bundles {{{
         " NB: no comments allowed on the line with Bundle!
         " NB: full path for github repos | just a name for vim-scripts
         " NB: previous two variations are not always interchangable
+        " Listing all the bundles we want:
         " Must have {{{
             " github interaction
             Bundle 'tpope/vim-fugitive'
@@ -242,22 +243,18 @@
             Bundle 'ctags.vim'
         " }}}
     " }}}
-
-" updating bundles
-    if iCanHazVundle == 0
+    " Post-init {{{
+    if shouldInit == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
         :BundleInstall
     endif
 
-
     " After scripts's been installed/updated/initialized
     filetype plugin indent on
 
     " }}}
-
 " }}}
-
 " Aesthetics {{{
 
     " Default console colorscheme
@@ -318,7 +315,6 @@
     au InsertLeave * match ExtraWhiteSpace /\S\zs\s\+$/
 
 " }}}
-
 " Behaviour {{{
 
     set autoindent              " always set autoindenting on
@@ -349,7 +345,6 @@
     "set path=??
 
 " }}}
-
 " Localization {{{
     " In Soviet Russia key maps you!
     set keymap=russian-jcukenwin
@@ -365,7 +360,6 @@
     " Spelling correction (ёжЪ компатиблЪ)
     :setlocal spell spelllang=ru_yo,en_us
 " }}}
-
 " Key mappings {{{
 
     " Change the mapleader from \ to ,
@@ -534,7 +528,6 @@
     let g:EasyMotion_leader_key = '<Leader>'
 
 " }}}
-
 " Folding {{{
 
     " Method
@@ -553,7 +546,6 @@
     "TODO: add some more!
 
 "}}}
-
 " Script tweaks {{{
 
     " Neocomplete cache
@@ -622,7 +614,6 @@
     let g:slime_target = "tmux"
 
 " }}}
-
 " Functions {{{
 
     " List information about matching tags in a buffer
@@ -685,7 +676,6 @@
         endif
     endfunction
 " }}}
-
 " File type dependent {{{
 
     " Force actionscript and flex types
@@ -722,7 +712,6 @@
 
 " }}}
 " }}}
-
 " Appendix {{{
     " Shortcuts {{{
         " easymotion: leader + w, leader + b, leader + ge, leader + j
