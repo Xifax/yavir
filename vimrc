@@ -28,6 +28,7 @@
     " TODO: enable/disable trailing whitespaces highlight
     " TODO: add automatic conversion: -- to long dash for txt and tex
     " TODO: xdebug bindings, shortcuts
+    " TODO: those darn italics!
 " }}}
 " }}}
 " Core {{{
@@ -138,12 +139,12 @@
         " Languages & frameworks {{{
             " Language agnostic
             Bundle 'thinca/vim-quickrun'
-            " HTML
+            """ HTML """
             Bundle 'briangershon/html5.vim'
             Bundle 'gregsexton/MatchTag'
             Bundle 'tpope/vim-ragtag'
             "Bundle 'matchit.vim'
-            " PHP
+            """ PHP """
             Bundle 'php.vim'
             Bundle 'paulyg/Vim-PHP-Stuff'
             Bundle 'spf13/PIV'
@@ -151,27 +152,27 @@
             Bundle 'qbbr/vim-symfony'
             "Bundle 'travisj/php-xdebug-vim'
             "Bundle 'joonty/vim-phpqa'
-            " Python
+            """ Python """
             Bundle 'Python-mode-klen'
             Bundle 'python.vim'
             Bundle 'ehamberg/vim-cute-python'
             "Bundle 'Pydiction'
-            " Actionscript
+            """ Actionscript """
             "Bundle 'Flex-4'
-            " LaTeX
+            """ LaTeX """
             Bundle 'LaTeX-Box'
-            " Haskell
+            """ Haskell """
             Bundle 'haskell.vim'
             Bundle 'frerich/unicode-haskell'
-            " Clojure
+            """ Clojure """
             Bundle 'VimClojure'
             Bundle 'jpalardy/vim-slime'
-            " Scala
+            """ Scala """
             "Bundle 'vim-scala'
             "Bundle 'scala.vim'
-            " Markdown
+            """" Markdown """
             Bundle 'tpope/vim-markdown'
-            " SQL | DB
+            """ SQL | DB """
             "Bundle 'dbext.vim'
             "Bundle 'mattn/vdbi-vim'
             "Bundle 'mattn/webapi-vim'
@@ -251,11 +252,8 @@
 " }}}
 " Aesthetics {{{
 
-    " Default console colorscheme
+    " NB: By default, will use terminal colorscheme
     "colorscheme darkspectrum
-    "colorscheme solarized
-    " Set light background for terminal use
-    "set background=light
     " Switching to light version in case of gui
     if has("gui_running")
         set background=light
@@ -300,7 +298,7 @@
         au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
     endif
 
-    " Highlight trailing whitespace in vim on non empty lines, but not while
+    " Highlight trailing whitespace in Vim on non empty lines, but not while
     " typing in insert mode!
     highlight ExtraWhitespace ctermbg=red guibg=Orange
     au ColorScheme * highlight ExtraWhitespace guibg=Orange
@@ -314,29 +312,30 @@
     set autoindent              " always set autoindenting on
     set copyindent              " copy the previous indentation on autoindenting
     set ignorecase              " ignore case when searching
-    set smartcase               " ignore case if search pattern is all lowercase, case-sensitive otherwise
-    set smarttab                " insert tabs on the start of a line according to shiftwidth, not tabstop
-
-    set shiftround              " use multiple of shiftwidth when indenting with '<' and '>'
+    " ignore case if search pattern is all lowercase, case-sensitive otherwise
+    set smartcase
+    " insert tabs on the start of a line according to shiftwidth, not tabstop
+    set smarttab
+    "
+    " use multiple of shiftwidth when indenting with '<' and '>'
+    set shiftround
     set shiftwidth=4            " number of spaces to use for autoindenting
     set tabstop=4               " a tab is four spaces
     set expandtab               " spaces instead of tabs
     set history=1000            " remember more commands and search history
     set undolevels=1000         " use many muchos levels of undo
     set synmaxcol=300           " prevent vim from lagging on VERY long lines
-    set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+    "
+    " allow backspacing over everything in insert mode
+    set backspace=indent,eol,start
     set wildignore=*.swp,*.bak,*.pyc,*.class
 
     set noswapfile              " need no swaps
-    "set autochdir              " change directory to current file on edit
+    set autoread                " reload on changes without promt
     set hidden                  " don't prompt for save while changing files
     set encoding=utf-8          " always unicode
     set backup                  " always backup into special directory
     set backupdir=~/.vim/backup
-
-    " autocomplete
-    "set complete-=i
-    "set path=??
 
 " }}}
 " Localization {{{
@@ -449,10 +448,7 @@
     "let g:quickrun_config = {}
     "let g:quickrun_config.php = {'command' : 'php', 'cmdopt' : '-r'}
 
-    " Smart tab completion (deprecated: should use appropriate plugin)
-    " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-
-    " Sane regexes
+    " Sane regexes (optional)
     nnoremap / /\v
     vnoremap / /\v
 
@@ -460,7 +456,7 @@
     noremap <F1> <Esc>
 
     " Switch buffers quickly
-    " NB: in case of double leader, some commands will await slight deliay
+    " NB: in case of double leader, some commands will await slight delay
     noremap <Leader><Leader> <C-^>
 
     " Better command line editing
@@ -526,7 +522,7 @@
 
     " Method
     set foldmethod=syntax
-    set foldlevelstart=0
+    set foldlevelstart=0            " modify for greedier folding
 
     " Languages
     let javaScript_fold=1           " JavaScript
@@ -563,10 +559,6 @@
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
 
-    " Command-T
-    "let g:CommandTMaxCachedDirectories=10
-    "let g:CommandTMaxDepth=30
-
     " ctrlp
     let g:ctrlp_working_path_mode = 2
     let g:ctrlp_custom_ignore = {
@@ -575,13 +567,14 @@
         \ }
 
     " dbext
-    let g:dbext_default_profile_mysql_egrat = 'type=MYSQL:user=egrat:passwd=egrat:dbname=egrat-test:host=v1.7net.ru'
+    let g:dbext_default_profile_mysql_egrat = 'type=MYSQL:user=user:
+                \ passwd=root:dbname=dbname:host=hostname'
 
     " VimClojure
     let vimclojure#HighlightBuiltins = 1
     let vimclojure#ParenRainbow = 1
 
-    " Rainbow parenthesis
+    " Rainbow parenthesis (optional)
     let g:rbpt_colorpairs = [
         \ ['brown',       'RoyalBlue3'],
         \ ['Darkblue',    'SeaGreen3'],
@@ -625,7 +618,7 @@
         "normal 1G
     "endfunc
 
-    "Preserves/Saves the state, executes a command, and returns to the saved state
+    "Preserves the state, executes a command, and returns to the saved state
     "From http://vimcasts.org/episodes/tidying-whitespace/
     function! Preserve(command)
         " Preparation: save last search, and cursor position.
@@ -637,28 +630,6 @@
         " Clean up: restore previous search history, and cursor position
         let @/=_s
         call cursor(l, c)
-    endfunction
-
-    " Smart completion on Tab [unused]
-    function! Smart_TabComplete()
-        let line = getline('.')                         " current line
-
-        let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-                                                        " line to one character right
-                                                        " of the cursor
-        let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-        if (strlen(substr)==0)                          " nothing to match on empty string
-            return "\<tab>"
-        endif
-        let has_period = match(substr, '\.') != -1      " position of period, if any
-        let has_slash = match(substr, '\/') != -1       " position of slash, if any
-        if (!has_period && !has_slash)
-            return "\<C-X>\<C-P>"                         " existing text matching
-        elseif ( has_slash )
-            return "\<C-X>\<C-F>"                         " file matching
-        else
-            return "\<C-X>\<C-O>"                         " plugin matching
-        endif
     endfunction
 
     " Langmap indication: eng (dark blue) -> rus (dark red) [unused]
@@ -741,16 +712,11 @@
         " vimfiler explorer: leader + vf
         " surround: ds( | cs([ | csw(
         " surround[visual]: s[
-        " ...
     " }}}
     " Memo {{{
         " Some of the scripts require additional installation
-        " Command-T is much faster than ctrlp
-        " When using Command-T, one should change current dir to project root
-        " similar: Command-T, LustyExplorer, LustyJuggler, FuzzyFinder
         " Don't switch OS languages, use keymap (ctrl + l)
-        " Don't use 'consolas' on unix (or customize hinting)
+        " Don't use 'consolas' on unix (requires customize hinting)
         " Don't use 'ricty' for cyrillic text
-        " ...
     " }}}
 " }}}
