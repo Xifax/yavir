@@ -51,6 +51,8 @@
         silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
         echo "Creating backup dir..."
         silent !mkdir -p ~/.vim/backup
+        echo "Creating spell dir..."
+        silent !mkdir -p ~/.vim/spell
         let shouldInit=0
     endif
 
@@ -63,9 +65,7 @@
 
     "}}}
     " Bundles {{{
-        " NB: no comments allowed on the line with Bundle!
-        " NB: full path for github repos | just a name for vim-scripts
-        " NB: previous two variations are not always interchangable
+        " NB: no comments allowed on the line with the bundle!
         " Listing all the bundles we want:
         " Must have {{{
             " github interaction

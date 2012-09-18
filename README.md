@@ -10,7 +10,7 @@ Also, notate bene.
 
 ## Installation
 
-Voodo magic:
+Voodoo magic:
 
     wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
 
