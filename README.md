@@ -1,9 +1,11 @@
 Yet another Vim config (or 'run commands', if you would)
 ---
 
-## To install:
+Everybody does it! That is all.
 
-    wget https://github.com/Xifax/yavir/blob/master/setup.sh | sh
+## Installation
+
+    wget -qO- https://github.com/Xifax/yavir/raw/master/setup.sh | sh
 
 ## TODO
 
