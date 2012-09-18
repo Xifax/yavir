@@ -12,8 +12,7 @@ Also, notate bene.
 
 Voodo magic:
 
-    wget -qO- https://github.com/Xifax/yavir/raw/master/setup.sh | sh
-    vim
+    wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
 
 You may also just clone repo and symlink vimrc:
 
@@ -21,6 +20,9 @@ You may also just clone repo and symlink vimrc:
     git clone git://github.com/Xifax/yavir.git .vim
     ln -s .vim/vimrc .vimrc
     vim
+
+When launched, it will get Vundle (you should have your *git*), then proceed
+to install all the bundles (edit those, before launching, will ya?).
 
 ## Notes
 
