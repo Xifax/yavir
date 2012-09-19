@@ -15,10 +15,10 @@
     " Sources: vimbits.com, github.com, vimcasts.org
 " }}}
 " What else to do {{{
+" TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
     " TODO: FIX BLINKING (whitespace check?)
     " TODO: FIX omnicomplete case (sic!)
     " TODO: what to do with spellfiles incompatibility?
-    " TODO: check spellcheck hotkey (also, spellcheck for russian language)
     " TODO: CamelCaseMotion breaks EasyMotion (sic!)
     " TODO: argtextobj breaks spellcheck (sic!!1)
     " TODO: surround bindings
@@ -188,11 +188,11 @@
             " Automatic tags generation
             "Bundle 'easytags.vim'
             " Project search
-            "Bundle 'ack.vim'
+            Bundle 'mileszs/ack.vim'
         " }}}
         " Files & buffers {{{
-            " Dynamic file search
-            Bundle 'git://git.wincent.com/command-t.git'
+            " Dynamic file search (needs to be compiled + ruby)
+            "Bundle 'git://git.wincent.com/command-t.git'
             " File tree
             Bundle 'The-NERD-tree'
             " Most recent files (and much more!)
@@ -202,7 +202,7 @@
             " Juggle folders, files (and buffers too)
             Bundle 'LustyExplorer'
             " Search everything!
-            Bundle 'FuzzyFiner'
+            "Bundle 'FuzzyFiner'
             " Unite everything
             Bundle 'Shougo/unite.vim'
             " File explorer
@@ -266,6 +266,9 @@
         "set guifont=Ricty\ 12
         "" Second best font ever (and free!)
         set guifont=Inconsolata\ 12
+        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+        " Very good too
+        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
         "" Propietary MS goodness (mmm, tasty!)
         "set guifont=Consolas\ 12
         "" DejaVu Mono, Droid Mono, Ubuntu Mono are fine too
@@ -316,7 +319,7 @@
     set smartcase
     " insert tabs on the start of a line according to shiftwidth, not tabstop
     set smarttab
-    "
+
     " use multiple of shiftwidth when indenting with '<' and '>'
     set shiftround
     set shiftwidth=4            " number of spaces to use for autoindenting
@@ -328,7 +331,9 @@
     "
     " allow backspacing over everything in insert mode
     set backspace=indent,eol,start
-    set wildignore=*.swp,*.bak,*.pyc,*.class
+    " ignore those things
+    set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
+      \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc,*.swp,*.bak
 
     set noswapfile              " need no swaps
     set autoread                " reload on changes without promt
@@ -336,6 +341,8 @@
     set encoding=utf-8          " always unicode
     set backup                  " always backup into special directory
     set backupdir=~/.vim/backup
+    set clipboard+=unnamed      " yanks go on clipboard
+    set timeoutlen=350          " time to wait for a command after leader
 
 " }}}
 " Localization {{{
@@ -358,18 +365,16 @@
     " Change the mapleader from \ to ,
     let mapleader=","
 
-    " Copy/paste to/from system clipboard
+    " Disable the ever-annoying Ex mode shortcut key
+    nmap Q <nop>
+
+    " Copy/paste to/from system clipboard (optional)
     map <silent><leader>y "+y
     nnoremap <silent><leader>p "+p
-    "nnoremap <silent><leader>c "+y
 
     " Quickly Edit/Save(reload) the Vimrc file
     nmap <silent> <leader>ev :e $MYVIMRC<CR>
     nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-    " Command-T remap
-    "nnoremap <silent> <Leader>q :CommandT<CR>
-    "nnoremap <silent> <Leader>a :CommandTBuffer<CR>
 
     " Easy window navigation (without the additional 'w' to press)
     map <C-h> <C-w>h
@@ -399,12 +404,13 @@
 
     " Lusty juggler
     nnoremap <silent> <leader>z :LustyJuggler<CR>
+    let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp
     nnoremap <C-M> :CtrlPMRU<CR>
-    let g:ctrlp_map = ',q'
-    nmap ,a :CtrlPBufTag<CR>
-    nmap ,l :CtrlPLine<CR>
+    let g:ctrlp_map = ',q'                  " search files
+    nmap ,a :CtrlPBufTag<CR>                " search tags
+    nmap ,l :CtrlPLine<CR>                  " search lines
     "nmap ,m :CtrlPMRUFiles<CR>"
 
     " NERDTree
@@ -426,16 +432,14 @@
     nnoremap <C-A-k> :resize -5<cr>
     nnoremap <C-A-l> :vertical resize +5<cr>
 
-    " Taglist
-    "nnoremap <silent> <leader>et :TlistOpen<CR>
-    "nnoremap <silent> <leader>eu :TlistUpdate<CR>
-
     " Tagbar
     nmap <F8> :TagbarToggle<CR>
     nmap <silent><leader>et :TagbarToggle<CR>
+    "let generate_tags=1
 
     " Yankring
-    nnoremap <silent> <F11> :YRShow<CR>
+    "nnoremap <silent> <F11> :YRShow<CR>
+    nnoremap <silent> <leader>yr :YRShow<CR>
 
     " Fuzzyfinder
     nnoremap <silent> <leader>gt :FufTag<CR>
@@ -449,8 +453,8 @@
     "let g:quickrun_config.php = {'command' : 'php', 'cmdopt' : '-r'}
 
     " Sane regexes (optional)
-    nnoremap / /\v
-    vnoremap / /\v
+    "nnoremap / /\v
+    "vnoremap / /\v
 
     " Self-expanatory
     noremap <F1> <Esc>
@@ -506,8 +510,8 @@
     "map <C-j> ]]
     "map <C-k> [[
 
-    " Tagsearch
-    map <leader>o :tselect \
+    " Tagsearch (optional)
+    "map <leader>o :tselect \
 
     " Supertab
     let g:SuperTabMappingForward = '<s-tab>'
@@ -561,10 +565,20 @@
 
     " ctrlp
     let g:ctrlp_working_path_mode = 2
+    let g:ctrlp_max_height = 10                 " perfomance!
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\.git$\|\.hg$\|\.svn$',
         \ 'file': '\.exe$\|\.so$\|\.dll$|\.swp$',
         \ }
+
+    " Powerline
+    let g:Powerline_symbols = 'fancy'           " requires patched fonts!
+    call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+
+    " Use # to get a variable interpolation (inside of a string)}
+    " ysiw#   Wrap the token under the cursor in #{}
+    " Thanks to http://git.io/_XqKzQ
+    let g:surround_35  = "#{\r}"
 
     " dbext
     let g:dbext_default_profile_mysql_egrat = 'type=MYSQL:user=user:
@@ -707,16 +721,16 @@
         " switch buffers: double leader
         " zoom/unzoom active window: ctrl + w + o
         " strip endline whitespaces: leader + sw
-        " unicode char (isert mode): ctrl + v + u____
+        " unicode char (insert mode): ctrl + v + u____
         " manage encoding: leader + me
         " vimfiler explorer: leader + vf
         " surround: ds( | cs([ | csw(
         " surround[visual]: s[
     " }}}
     " Memo {{{
-        " Some of the scripts require additional installation
         " Don't switch OS languages, use keymap (ctrl + l)
         " Don't use 'consolas' on unix (requires customize hinting)
         " Don't use 'ricty' for cyrillic text
+        " For cyrillic: Ubuntu Mono, for everything else: inconsolata, ricty
     " }}}
 " }}}
