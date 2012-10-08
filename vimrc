@@ -275,6 +275,7 @@
         " Quickswitch fonts
         map <F6> :set guifont=Inconsolata\ 12<CR>
         map <F7> :set guifont=Ricty\ 12<CR>
+        map <F8> :set guifont=Ubuntu\ Mono\ 12<CR>
     endif
 
     set wildmenu        " show hint on command input
@@ -433,7 +434,6 @@
     nnoremap <C-A-l> :vertical resize +5<cr>
 
     " Tagbar
-    nmap <F8> :TagbarToggle<CR>
     nmap <silent><leader>et :TagbarToggle<CR>
     "let generate_tags=1
 
@@ -698,7 +698,7 @@
         " lusty juggler: leader + lf, leader + lb
         " lusty buffer: leader + z
         " ctrl: Ctrl + p, Ctrl + f, Ctrl + b
-        " tags: F8 | leader + et
+        " tags: leader + et
         " search tag: leader + o
         " diff: diffthis for each open buffer | diffoff
         " set pwd: leader + cd | :cd %:p:h

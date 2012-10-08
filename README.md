@@ -10,9 +10,13 @@ Also, notate bene.
 
 ## Installation
 
-Voodoo magic:
+Voodoo magic (standalone vimrc):
 
     wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
+
+Another option is to get the whole repo:
+
+TODO
 
 You may also just clone repo and symlink vimrc:
 
@@ -34,7 +38,6 @@ Described in config itself. May (or may not) duplicate those here.
 
 ## TODO
 
-* semi-autoinstall
 * debug
 * add some shiny things
 * remove all the clusterfuck(s)
