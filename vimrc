@@ -143,6 +143,10 @@
             Bundle 'briangershon/html5.vim'
             Bundle 'gregsexton/MatchTag'
             Bundle 'tpope/vim-ragtag'
+            """ CSS """
+            Bundle 'wavded/vim-stylus'
+            """ JS """
+            Bundle 'kchmck/vim-coffee-script'
             "Bundle 'matchit.vim'
             """ PHP """
             Bundle 'php.vim'
