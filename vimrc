@@ -106,7 +106,7 @@
             "Bundle 'CSApprox'
             Bundle 'http://github.com/gmarik/vim-visual-star-search.git'
             " Color palette
-            Bundle 'ColorV'
+            Bundle 'Rykka/colorv.vim'
             " Indents visualised
             Bundle 'Indent-Guides'
             " Align tabulation and stuff
@@ -123,8 +123,8 @@
             Bundle 'kikijump/tslime.vim'
             " Paste tweaks
             Bundle 'sickill/vim-pasta'
-            " Unicode symbols autoconversion
-            Bundle 'UniCycle'
+            " Unicode symbols autoconversion [some error?]
+            "Bundle 'UniCycle'
         " }}}
         " Colorschemes {{{
             " Probably the best colorscheme ever
