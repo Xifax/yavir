@@ -125,6 +125,8 @@
             Bundle 'sickill/vim-pasta'
             " Unicode symbols autoconversion [some error?]
             "Bundle 'UniCycle'
+            " Quickfix list bindings
+            Bundle 'unimpaired.vim'
         " }}}
         " Colorschemes {{{
             " Probably the best colorscheme ever
@@ -147,6 +149,8 @@
             Bundle 'wavded/vim-stylus'
             """ JS """
             Bundle 'kchmck/vim-coffee-script'
+            """ LESS """
+            Bundle 'groenewege/vim-less'
             "Bundle 'matchit.vim'
             """ PHP """
             Bundle 'php.vim'
