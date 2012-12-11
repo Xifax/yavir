@@ -137,6 +137,7 @@
             Bundle 'BusyBee'
             Bundle 'jellybeans.vim'
             Bundle 'tpope/vim-vividchalk'
+            Bundle 'daylerees/colour-schemes'
         "}}}
         " Languages & frameworks {{{
             " Language agnostic
@@ -195,6 +196,7 @@
             "Bundle 'indexer.tag.gz'
             " Automatic tags generation
             "Bundle 'easytags.vim'
+            Bundle 'xolox/vim-easytags'
             " Project search
             Bundle 'mileszs/ack.vim'
         " }}}
@@ -271,19 +273,25 @@
         let g:solarized_visibility="high"
         colorscheme solarized
         "" The best font ever (bad for cyrillic characters, but oh well)
-        "set guifont=Ricty\ 12
+        "set guifont=Ricty\ 14
         "" Second best font ever (and free!)
-        set guifont=Inconsolata\ 12
-        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+        set guifont=Inconsolata\ 14
+
+        """ Other recommended fonts: """
+        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
         " Very good too
-        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 12
+        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
         "" Propietary MS goodness (mmm, tasty!)
-        "set guifont=Consolas\ 12
-        "" DejaVu Mono, Droid Mono, Ubuntu Mono are fine too
+        "set guifont=Consolas\ 14
+        "" DejaVu Mono, Droid Mono, Ubuntu Mono, Menlo, Monaco, Mensch are fine too
+        """ End of fonts """
+
+        " NB: Inconsolata & Ubuntu Mono have some problems with italics!"
+
         " Quickswitch fonts
-        map <F6> :set guifont=Inconsolata\ 12<CR>
-        map <F7> :set guifont=Ricty\ 12<CR>
-        map <F8> :set guifont=Ubuntu\ Mono\ 12<CR>
+        map <F6> :set guifont=Inconsolata\ 14<CR>
+        map <F7> :set guifont=Ricty\ 14<CR>
+        map <F8> :set guifont=Ubuntu\ Mono\ 14<CR>
     endif
 
     set wildmenu        " show hint on command input
@@ -357,7 +365,7 @@
 " Localization {{{
     " In Soviet Russia key maps you!
     set keymap=russian-jcukenwin
-    " By default: english for input and search
+    " By default: English for input and search
     set iminsert=0
     set imsearch=0
     " On language change also modify cursor color
@@ -365,6 +373,7 @@
     " Ctrl + l instead of Ctrl + ^ to change current locale
     inoremap <C-L> <C-^>
     " Toggle spellcheck on/off
+    " TODO: fix it!
     map <silent> <leader>ns :setlocal spell!<CR>
     " Spelling correction (ёжЪ компатиблЪ)
     :setlocal spell spelllang=ru_yo,en_us
@@ -418,9 +427,14 @@
     " Ctrlp
     nnoremap <C-M> :CtrlPMRU<CR>
     let g:ctrlp_map = ',q'                  " search files
-    nmap ,a :CtrlPBufTag<CR>                " search tags
-    nmap ,l :CtrlPLine<CR>                  " search lines
-    "nmap ,m :CtrlPMRUFiles<CR>"
+    " search tags in current buffer
+    nmap ,t :CtrlPBufTag<CR>
+    " search all buffers for tags
+    nmap ,a :CtrlPBufTagAll<CR>
+    " search all buffers
+    nmap ,x :CtrlPBuffer<CR>
+    " search line in all buffers
+    nmap ,l :CtrlPLine<CR>
 
     " NERDTree
     nnoremap <silent><Leader>nt :NERDTreeToggle<CR>
