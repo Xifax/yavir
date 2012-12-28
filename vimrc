@@ -162,7 +162,7 @@
             "Bundle 'travisj/php-xdebug-vim'
             "Bundle 'joonty/vim-phpqa'
             """ Python """
-            Bundle 'Python-mode-klen'
+            "Bundle 'Python-mode-klen'
             Bundle 'python.vim'
             Bundle 'ehamberg/vim-cute-python'
             "Bundle 'Pydiction'
@@ -428,9 +428,9 @@
     nnoremap <C-M> :CtrlPMRU<CR>
     let g:ctrlp_map = ',q'                  " search files
     " search tags in current buffer
-    nmap ,t :CtrlPBufTag<CR>
+    nmap ,a :CtrlPBufTag<CR>
     " search all buffers for tags
-    nmap ,a :CtrlPBufTagAll<CR>
+    "nmap ,a :CtrlPBufTagAll<CR>
     " search all buffers
     nmap ,x :CtrlPBuffer<CR>
     " search line in all buffers
