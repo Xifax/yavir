@@ -17,7 +17,18 @@ if [ -f ~/.vimrc ]
 fi
 
 # Download vimrc into ~
-wget -O ~/.vimrc https://github.com/Xifax/yavir/raw/master/vimrc
+# Present dialog option: either download vimrc only, or checkout full repo
+
+echo "Would you like to get vimrc only, or full git repository? (vimrc, repo)"
+
+select answer in "vimrc" "repo"; do
+    case $answer in
+        # Download vimrc into ~
+        vimrc ) wget -O ~/.vimrc https://github.com/Xifax/yavir/raw/master/vimrc; break;;
+        # Or clone repo and symlink
+        repo ) git clone git://github.com/Xifax/yavir.git .vim; ln -s .vim/vimrc .vimrc; break;;
+    esac
+done
 
 # Download fancy-powerline-patched fonts
 git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \

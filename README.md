@@ -10,11 +10,11 @@ Also, notate bene.
 
 ## Installation
 
-Voodoo magic (standalone vimrc):
+Voodoo magic:
 
     wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
 
-Another option is to get the whole repo:
+Another option is to get the whole repo manually:
 
 TODO
 
