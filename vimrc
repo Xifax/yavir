@@ -687,6 +687,8 @@
     au FileType txt set tw=79 fo=cqt wm=0
     au FileType txt set wrap
     au FileType tex set wrap
+    au FileType md set wrap
+    au FileType md set fo+a
     " Set compiler for xetex files
     au FileType tex set makeprg=xelatex\ %
     " Tex pdf preview
