@@ -38,6 +38,7 @@ Described in config itself. May (or may not) duplicate those here.
 
 ## TODO
 
+* source multi-part config (source .vimrc_module)
 * debug
 * add some shiny things
 * remove all the clusterfuck(s)
