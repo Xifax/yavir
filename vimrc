@@ -65,13 +65,17 @@
 
     "}}}
     " Bundles {{{
-        " NB: no comments allowed on the line with the bundle!
+        " NB: no comments allowed on the line with the bundle name!
         " Listing all the bundles we want:
         " Must have {{{
             " github interaction
             Bundle 'tpope/vim-fugitive'
+            " tig for vim
+            Bundle 'gregsexton/gitv'
             " markup easily in html, css and so on
             Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+            " Github issues
+            Bundle 'mklabs/vim-issues'
             " colorful parenthesis
             "Bundle 'nablaa/vim-rainbow-parenthesis'
             Bundle 'kien/rainbow_parentheses.vim'
@@ -81,16 +85,16 @@
             Bundle 'surround.vim'
             " yank and paste
             Bundle 'YankRing.vim'
+            " Context aware pasting (indentation)
+            Bundle 'sickill/vim-pasta'
             " automatic repeater (not that one)
             Bundle 'repeat.vim'
             " graphical undo tree
             Bundle 'Gundo'
             " tab completion (not so good, actually)
             Bundle 'SuperTab-continued.'
-            " version control interaction (svn, git and hg)
-            Bundle 'vcscommand.vim'
-            " Git wrapper
-            Bundle 'fugitive.vim'
+            " [UNUSED] version control interaction (svn, git and hg)
+            "Bundle 'vcscommand.vim'
             " automatic commenter
             Bundle 'The-NERD-Commenter'
             "syntax checker
@@ -101,6 +105,8 @@
             Bundle 'neocomplcache'
             " Zoom main window
             Bundle 'ZoomWin'
+            " Tiled window management (actually, not so useful)
+            "Bundle 'spolu/dwm.vim'
             " Additional search information
             Bundle 'IndexedSearch'
             "Bundle 'CSApprox'
@@ -117,27 +123,30 @@
             Bundle 'Raimondi/delimitMate'
             " Tags, tags, tags!
             Bundle 'Tagbar'
-            " Shell inside (may require additional steps to install)
-            Bundle 'Conque-Shell'
+            " [UNUSED] Shell inside (may require additional steps to install)
+            "Bundle 'Conque-Shell'
             " Tmux client
             Bundle 'kikijump/tslime.vim'
-            " Paste tweaks
-            Bundle 'sickill/vim-pasta'
-            " Unicode symbols autoconversion [some error?]
+            " [BUG] Unicode symbols autoconversion
             "Bundle 'UniCycle'
-            " Quickfix list bindings
+            " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
             Bundle 'unimpaired.vim'
         " }}}
         " Colorschemes {{{
             " Probably the best colorscheme ever
             Bundle 'altercation/vim-colors-solarized'
+            " Solorized + jellybeans + tomorrow night
+            Bundle 'w0ng/vim-hybrid'
             " The best dark contrast colorscheme(s)
             Bundle 'darkspectrum'
+            Bundle 'sjl/badwolf'
+            Bundle 'tomasr/molokai'
             Bundle 'rdark'
             Bundle 'BusyBee'
             Bundle 'jellybeans.vim'
             Bundle 'tpope/vim-vividchalk'
             Bundle 'daylerees/colour-schemes'
+            Bundle 'larssmit/vim-getafe'
         "}}}
         " Languages & frameworks {{{
             " Language agnostic
@@ -199,6 +208,8 @@
             Bundle 'xolox/vim-easytags'
             " Project search
             Bundle 'mileszs/ack.vim'
+            " Shell wrapper
+            Bundle 'sjl/clam.vim'
         " }}}
         " Files & buffers {{{
             " Dynamic file search (needs to be compiled + ruby)
@@ -266,24 +277,25 @@
     "colorscheme darkspectrum
     " Switching to light version in case of gui
     if has("gui_running")
-        set background=light
-        let g:solarized_termtrans=1
-        let g:solarized_termcolors=256
-        let g:solarized_contrast="high"
-        let g:solarized_visibility="high"
-        colorscheme solarized
+        "set background=light
+        colorscheme badwolf
+
         "" The best font ever (bad for cyrillic characters, but oh well)
         "set guifont=Ricty\ 14
         "" Second best font ever (and free!)
-        set guifont=Inconsolata\ 14
+        "set guifont=Inconsolata\ 14
 
         """ Other recommended fonts: """
         "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
         " Very good too
-        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
+        set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
         "" Propietary MS goodness (mmm, tasty!)
         "set guifont=Consolas\ 14
-        "" DejaVu Mono, Droid Mono, Ubuntu Mono, Menlo, Monaco, Mensch are fine too
+        "" Also nice:
+        "" DejaVu Mono, Droid Mono, Ubuntu Mono,
+        "" Menlo, Meslo, Monaco, Mensch
+        "" Nimbus Mono L
+        "" Source Sans Pro, Source Code Pro
         """ End of fonts """
 
         " NB: Inconsolata & Ubuntu Mono have some problems with italics!"
@@ -320,11 +332,16 @@
 
     " Highlight trailing whitespace in Vim on non empty lines, but not while
     " typing in insert mode!
-    highlight ExtraWhitespace ctermbg=red guibg=Orange
-    au ColorScheme * highlight ExtraWhitespace guibg=Orange
-    au BufEnter * match ExtraWhitespace /\S\zs\s\+$/
-    au InsertEnter * match ExtraWhitespace /\S\zs\s\+\%#\@<!$/
-    au InsertLeave * match ExtraWhiteSpace /\S\zs\s\+$/
+    "highlight ExtraWhitespace ctermbg=red guibg=Orange
+    "au ColorScheme * highlight ExtraWhitespace guibg=Orange
+    "au BufEnter * match ExtraWhitespace /\S\zs\s\+$/
+    "au InsertEnter * match ExtraWhitespace /\S\zs\s\+\%#\@<!$/
+    "au InsertLeave * match ExtraWhiteSpace /\S\zs\s\+$/
+
+    " Custom invisibles
+    set list
+    set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+    set showbreak=↪
 
 " }}}
 " Behaviour {{{
@@ -417,6 +434,10 @@
     " Shell in gVim
     "cmap !! ConqueTermVSplit
 
+    " Decrement|increment
+    nnoremap + <C-a>
+    nnoremap - <C-x>
+
     " Visual undo tree
     nnoremap <F5> :GundoToggle<CR>
 
@@ -435,6 +456,8 @@
     nmap ,x :CtrlPBuffer<CR>
     " search line in all buffers
     nmap ,l :CtrlPLine<CR>
+    " Unmap enter key!
+    unmap <CR>
 
     " NERDTree
     nnoremap <silent><Leader>nt :NERDTreeToggle<CR>
@@ -460,8 +483,7 @@
     "let generate_tags=1
 
     " Yankring
-    "nnoremap <silent> <F11> :YRShow<CR>
-    nnoremap <silent> <leader>yr :YRShow<CR>
+    nnoremap <silent> <leader>r :YRShow<CR>
 
     " Fuzzyfinder
     nnoremap <silent> <leader>gt :FufTag<CR>
@@ -542,6 +564,16 @@
     " EasyMotion
     " NB: comment out in case of conflict with other plugins!
     let g:EasyMotion_leader_key = '<Leader>'
+
+    " Fugitive
+    map <leader>gc :Gcommit<CR>
+    map <leader>gs :Gstatus<CR>
+    map <leader>gl :Glog<CR>
+    map <leader>gb :Gbrowse<CR>
+    map <leader>gg :Ggrep<CR>
+
+    " Paste from system buffer when in insert mode"
+    inoremap <C-i> <C-r>*
 
 " }}}
 " Folding {{{
@@ -682,13 +714,13 @@
     " Force actionscript and flex types
     au BufRead *.as set filetype=actionscript
     au BufRead *.mxml set filetype=mxml
-    " User wrapping for tex and txt
+    " User wrapping for tex, txt, md
     au FileType tex set tw=79 fo=cqt wm=0
     au FileType txt set tw=79 fo=cqt wm=0
+    au FileType md set tw=79 fo=cqt wm=0
     au FileType txt set wrap
     au FileType tex set wrap
     au FileType md set wrap
-    au FileType md set fo+a
     " Set compiler for xetex files
     au FileType tex set makeprg=xelatex\ %
     " Tex pdf preview
