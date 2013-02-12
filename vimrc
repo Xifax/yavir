@@ -1,18 +1,25 @@
 "Intro {{{
 "What is this {{{
     " I am the script of my vim... Actually, no, not quite.
+    "
     " So, this is my vimrc file, obviously.
     " It's based on many-many-many personal vim configs, yet,
     " despite all this, still continues to work. One day someone even
     " might find something useful in this pile, ahem, garden of
     " everything.
+    "
+    " Additional scripts are installed using Vundle. Vundle itself is
+    " installed automatically (requires git in path).
+    " Each configuration section is located into separate script to prevent
+    " utter confusion (use gf to quickly go to sourced script).
+    "
     " And remember: loose configs are sinking battleships!
 
     " Author: Artiom Basenko
-    " Updated: 06.09.2012
+    " Updated: 12.02.2013
     " Version: stopped counting long ago
     " OS: preferably Linux
-    " Sources: vimbits.com, github.com, vimcasts.org
+    " Sources: vimbits.com, github.com, vimcasts.org, internets
 " }}}
 " What else to do {{{
 " TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
@@ -31,9 +38,9 @@
     " TODO: those darn italics!
 " }}}
 " }}}
-" Core {{{
+" Configuration {{{
 " Scripts {{{
-    " Initialize Vim bundles and other stuff {{{
+    " Pre-init {{{
 
     " be iMproved
     set nocompatible
@@ -65,199 +72,7 @@
 
     "}}}
     " Bundles {{{
-        " NB: no comments allowed on the line with the bundle name!
-        " Listing all the bundles we want:
-        " Must have {{{
-            " github interaction
-            Bundle 'tpope/vim-fugitive'
-            " tig for vim
-            Bundle 'gregsexton/gitv'
-            " markup easily in html, css and so on
-            Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-            " Github issues
-            Bundle 'mklabs/vim-issues'
-            " colorful parenthesis
-            "Bundle 'nablaa/vim-rainbow-parenthesis'
-            Bundle 'kien/rainbow_parentheses.vim'
-            " vim-script lib
-            Bundle 'L9'
-            " auto-surround
-            Bundle 'surround.vim'
-            " yank and paste
-            Bundle 'YankRing.vim'
-            " Context aware pasting (indentation)
-            Bundle 'sickill/vim-pasta'
-            " automatic repeater (not that one)
-            Bundle 'repeat.vim'
-            " graphical undo tree
-            Bundle 'Gundo'
-            " tab completion (not so good, actually)
-            Bundle 'SuperTab-continued.'
-            " [UNUSED] version control interaction (svn, git and hg)
-            "Bundle 'vcscommand.vim'
-            " automatic commenter
-            Bundle 'The-NERD-Commenter'
-            "syntax checker
-            Bundle 'Syntastic'
-            " majestic status line
-            Bundle 'Lokaltog/vim-powerline'
-            " completion cache
-            Bundle 'neocomplcache'
-            " Zoom main window
-            Bundle 'ZoomWin'
-            " Tiled window management (actually, not so useful)
-            "Bundle 'spolu/dwm.vim'
-            " Additional search information
-            Bundle 'IndexedSearch'
-            "Bundle 'CSApprox'
-            Bundle 'http://github.com/gmarik/vim-visual-star-search.git'
-            " Color palette
-            Bundle 'Rykka/colorv.vim'
-            " Indents visualised
-            Bundle 'Indent-Guides'
-            " Align tabulation and stuff
-            Bundle 'Tabular'
-            " displaying signs for version control, errors and fixes
-            Bundle 'quickfixsigns'
-            " Syntax-aware auto closing quotes, brackets, etc
-            Bundle 'Raimondi/delimitMate'
-            " Tags, tags, tags!
-            Bundle 'Tagbar'
-            " [UNUSED] Shell inside (may require additional steps to install)
-            "Bundle 'Conque-Shell'
-            " Tmux client
-            Bundle 'kikijump/tslime.vim'
-            " [BUG] Unicode symbols autoconversion
-            "Bundle 'UniCycle'
-            " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
-            Bundle 'unimpaired.vim'
-        " }}}
-        " Colorschemes {{{
-            " Probably the best colorscheme ever
-            Bundle 'altercation/vim-colors-solarized'
-            " Solorized + jellybeans + tomorrow night
-            Bundle 'w0ng/vim-hybrid'
-            " The best dark contrast colorscheme(s)
-            Bundle 'darkspectrum'
-            Bundle 'sjl/badwolf'
-            Bundle 'tomasr/molokai'
-            Bundle 'rdark'
-            Bundle 'BusyBee'
-            Bundle 'jellybeans.vim'
-            Bundle 'tpope/vim-vividchalk'
-            Bundle 'daylerees/colour-schemes'
-            Bundle 'larssmit/vim-getafe'
-        "}}}
-        " Languages & frameworks {{{
-            " Language agnostic
-            Bundle 'thinca/vim-quickrun'
-            """ HTML """
-            Bundle 'briangershon/html5.vim'
-            Bundle 'gregsexton/MatchTag'
-            Bundle 'tpope/vim-ragtag'
-            """ CSS """
-            Bundle 'wavded/vim-stylus'
-            """ JS """
-            Bundle 'kchmck/vim-coffee-script'
-            """ LESS """
-            Bundle 'groenewege/vim-less'
-            "Bundle 'matchit.vim'
-            """ PHP """
-            Bundle 'php.vim'
-            Bundle 'paulyg/Vim-PHP-Stuff'
-            Bundle 'spf13/PIV'
-            "Bundle 'phpcomplete.vim'
-            Bundle 'qbbr/vim-symfony'
-            "Bundle 'travisj/php-xdebug-vim'
-            "Bundle 'joonty/vim-phpqa'
-            """ Python """
-            "Bundle 'Python-mode-klen'
-            Bundle 'python.vim'
-            Bundle 'ehamberg/vim-cute-python'
-            "Bundle 'Pydiction'
-            """ Actionscript """
-            "Bundle 'Flex-4'
-            """ LaTeX """
-            Bundle 'LaTeX-Box'
-            """ Haskell """
-            Bundle 'haskell.vim'
-            Bundle 'frerich/unicode-haskell'
-            """ Clojure """
-            Bundle 'VimClojure'
-            Bundle 'jpalardy/vim-slime'
-            """ Scala """
-            "Bundle 'vim-scala'
-            "Bundle 'scala.vim'
-            """" Markdown """
-            Bundle 'tpope/vim-markdown'
-            """ SQL | DB """
-            "Bundle 'dbext.vim'
-            "Bundle 'mattn/vdbi-vim'
-            "Bundle 'mattn/webapi-vim'
-            "Bundle 'MarcWeber/vim-addon-sql'
-            "Bundle 'SQLUtilities'
-        " }}}
-        " Projects and tags {{{
-            "!Bundle 'DfrankUtil'
-            " Project management
-            "Bundle 'vimprj'
-            " Background indexer
-            "Bundle 'indexer.tag.gz'
-            " Automatic tags generation
-            "Bundle 'easytags.vim'
-            Bundle 'xolox/vim-easytags'
-            " Project search
-            Bundle 'mileszs/ack.vim'
-            " Shell wrapper
-            Bundle 'sjl/clam.vim'
-        " }}}
-        " Files & buffers {{{
-            " Dynamic file search (needs to be compiled + ruby)
-            "Bundle 'git://git.wincent.com/command-t.git'
-            " File tree
-            Bundle 'The-NERD-tree'
-            " Most recent files (and much more!)
-            Bundle 'kien/ctrlp.vim'
-            " Juggle buffers
-            Bundle 'LustyJuggler'
-            " Juggle folders, files (and buffers too)
-            Bundle 'LustyExplorer'
-            " Search everything!
-            "Bundle 'FuzzyFiner'
-            " Unite everything
-            Bundle 'Shougo/unite.vim'
-            " File explorer
-            Bundle 'Shougo/vimfiler'
-        " }}}
-        " Motions & text objects {{{
-            " Navigate file easily
-            Bundle 'Lokaltog/vim-easymotion'
-            " Move inside camel(pascal) case names [bugs]
-            "Bundle 'camelcasemotion'
-            " Move inside function arguments [bugs]
-            "Bundle 'argtextobj.vim'
-        " }}}
-        " Misc {{{
-            " My vim cannot be so multi(over)-tasked!
-            "Bundle 'ironcamel/vimchat'
-            " Question/letters from vim mailing list
-            "Bundle 'chrisbra/vim_faq'
-            " Draw ASCII stuff
-            Bundle 'DrawIt'
-            " Manage encoding
-            Bundle 'FencView.vim'
-        "}}}
-        " Unused {{{
-            " two-panel file manager
-            "Bundle 'vimcommander'
-            "Bundle 'rails.vim'
-            "Bundle 'vim-ipython'
-            "Bundle 'VimPdb'
-            "Bundle 'Bundle DBGp-Remote-Debugger-Interface'
-            " ctag your source code!
-            "Bundle 'taglist.vim'
-            Bundle 'ctags.vim'
-        " }}}
+    source ~/.vim/scripts/bundles.vim
     " }}}
     " Post-init {{{
     if shouldInit == 0
@@ -272,479 +87,28 @@
     " }}}
 " }}}
 " Aesthetics {{{
-
-    " NB: By default, will use terminal colorscheme
-    "colorscheme darkspectrum
-    " Switching to light version in case of gui
-    if has("gui_running")
-        "set background=light
-        colorscheme badwolf
-
-        "" The best font ever (bad for cyrillic characters, but oh well)
-        "set guifont=Ricty\ 14
-        "" Second best font ever (and free!)
-        "set guifont=Inconsolata\ 14
-
-        """ Other recommended fonts: """
-        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
-        " Very good too
-        set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
-        "" Propietary MS goodness (mmm, tasty!)
-        "set guifont=Consolas\ 14
-        "" Also nice:
-        "" DejaVu Mono, Droid Mono, Ubuntu Mono,
-        "" Menlo, Meslo, Monaco, Mensch
-        "" Nimbus Mono L
-        "" Source Sans Pro, Source Code Pro
-        """ End of fonts """
-
-        " NB: Inconsolata & Ubuntu Mono have some problems with italics!"
-
-        " Quickswitch fonts
-        map <F6> :set guifont=Inconsolata\ 14<CR>
-        map <F7> :set guifont=Ricty\ 14<CR>
-        map <F8> :set guifont=Ubuntu\ Mono\ 14<CR>
-    endif
-
-    set wildmenu        " show hint on command input
-    set cursorline      " highlight line the cursor is currently on
-    set cursorcolumn    " also highlight column
-    set number          " always show line numbers
-    set showmatch       " show matching parenthesis
-    set hlsearch        " highlight search terms
-    set incsearch       " show search matches as you type
-    set title           " change the terminal's title
-    set novisualbell    " don't beep
-    set noerrorbells    " please don't beep
-    set nowrap          " don't wrap lines
-    set laststatus=2    " always show statusline
-    syntax on           " do higlight syntax
-
-    :set guioptions-=m  " remove menu bar
-    :set guioptions-=T  " remove toolbar
-
-    " Highlight 80st column
-    if exists('+colorcolumn')
-        set colorcolumn=80
-    else
-        au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-    endif
-
-    " Highlight trailing whitespace in Vim on non empty lines, but not while
-    " typing in insert mode!
-    "highlight ExtraWhitespace ctermbg=red guibg=Orange
-    "au ColorScheme * highlight ExtraWhitespace guibg=Orange
-    "au BufEnter * match ExtraWhitespace /\S\zs\s\+$/
-    "au InsertEnter * match ExtraWhitespace /\S\zs\s\+\%#\@<!$/
-    "au InsertLeave * match ExtraWhiteSpace /\S\zs\s\+$/
-
-    " Custom invisibles
-    set list
-    set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-    set showbreak=↪
-
+source ~/.vim/scripts/visual.vim
 " }}}
 " Behaviour {{{
-
-    set autoindent              " always set autoindenting on
-    set copyindent              " copy the previous indentation on autoindenting
-    set ignorecase              " ignore case when searching
-    " ignore case if search pattern is all lowercase, case-sensitive otherwise
-    set smartcase
-    " insert tabs on the start of a line according to shiftwidth, not tabstop
-    set smarttab
-
-    " use multiple of shiftwidth when indenting with '<' and '>'
-    set shiftround
-    set shiftwidth=4            " number of spaces to use for autoindenting
-    set tabstop=4               " a tab is four spaces
-    set expandtab               " spaces instead of tabs
-    set history=1000            " remember more commands and search history
-    set undolevels=1000         " use many muchos levels of undo
-    set synmaxcol=300           " prevent vim from lagging on VERY long lines
-    "
-    " allow backspacing over everything in insert mode
-    set backspace=indent,eol,start
-    " ignore those things
-    set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
-      \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc,*.swp,*.bak
-
-    set noswapfile              " need no swaps
-    set autoread                " reload on changes without promt
-    set hidden                  " don't prompt for save while changing files
-    set encoding=utf-8          " always unicode
-    set backup                  " always backup into special directory
-    set backupdir=~/.vim/backup
-    set clipboard+=unnamed      " yanks go on clipboard
-    set timeoutlen=350          " time to wait for a command after leader
-
+source ~/.vim/scripts/core.vim
 " }}}
 " Localization {{{
-    " In Soviet Russia key maps you!
-    set keymap=russian-jcukenwin
-    " By default: English for input and search
-    set iminsert=0
-    set imsearch=0
-    " On language change also modify cursor color
-    highlight lCursor guifg=NONE guibg=Orange
-    " Ctrl + l instead of Ctrl + ^ to change current locale
-    inoremap <C-L> <C-^>
-    " Toggle spellcheck on/off
-    " TODO: fix it!
-    map <silent> <leader>ns :setlocal spell!<CR>
-    " Spelling correction (ёжЪ компатиблЪ)
-    :setlocal spell spelllang=ru_yo,en_us
+source ~/.vim/scripts/locale.vim
 " }}}
 " Key mappings {{{
-
-    " Change the mapleader from \ to ,
-    let mapleader=","
-
-    " Disable the ever-annoying Ex mode shortcut key
-    nmap Q <nop>
-
-    " Copy/paste to/from system clipboard (optional)
-    map <silent><leader>y "+y
-    nnoremap <silent><leader>p "+p
-
-    " Quickly Edit/Save(reload) the Vimrc file
-    nmap <silent> <leader>ev :e $MYVIMRC<CR>
-    nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-    " Easy window navigation (without the additional 'w' to press)
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
-
-    " Move lines up'n'down
-    nnoremap <A-j> :m+<CR>==
-    nnoremap <A-k> :m-2<CR>==
-    inoremap <A-j> <Esc>:m+<CR>==gi
-    inoremap <A-k> <Esc>:m-2<CR>==gi
-    vnoremap <A-j> :m'>+<CR>gv=gv
-    vnoremap <A-k> :m-2<CR>gv=gv
-
-    " Clear highlghted search (handy!)
-    nmap <silent> ,/ :nohlsearch<CR>
-
-    " In case we forgot to sudo (will ask for password, obviously)
-    cmap w!! w !sudo tee % >/dev/null
-
-    " Shell in gVim
-    "cmap !! ConqueTermVSplit
-
-    " Decrement|increment
-    nnoremap + <C-a>
-    nnoremap - <C-x>
-
-    " Visual undo tree
-    nnoremap <F5> :GundoToggle<CR>
-
-    " Lusty juggler
-    nnoremap <silent> <leader>z :LustyJuggler<CR>
-    let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
-
-    " Ctrlp
-    nnoremap <C-M> :CtrlPMRU<CR>
-    let g:ctrlp_map = ',q'                  " search files
-    " search tags in current buffer
-    nmap ,a :CtrlPBufTag<CR>
-    " search all buffers for tags
-    "nmap ,a :CtrlPBufTagAll<CR>
-    " search all buffers
-    nmap ,x :CtrlPBuffer<CR>
-    " search line in all buffers
-    nmap ,l :CtrlPLine<CR>
-    " Unmap enter key!
-    unmap <CR>
-
-    " NERDTree
-    nnoremap <silent><Leader>nt :NERDTreeToggle<CR>
-    map <silent> <leader>sf :NERDTree<CR><C-w>p:NERDTreeFind<CR>
-
-    " Non-interruptive indentation
-    vnoremap > >gv
-    vnoremap < <gv
-
-    " Quick split
-    nnoremap <silent> ss :split<CR>
-    nnoremap <silent> vv :vsplit<CR>
-    nnoremap <silent> sq :close<CR>
-
-    " Resize current buffer by +/- 5
-    nnoremap <C-A-h> :vertical resize -5<cr>
-    nnoremap <C-A-j> :resize +5<cr>
-    nnoremap <C-A-k> :resize -5<cr>
-    nnoremap <C-A-l> :vertical resize +5<cr>
-
-    " Tagbar
-    nmap <silent><leader>et :TagbarToggle<CR>
-    "let generate_tags=1
-
-    " Yankring
-    nnoremap <silent> <leader>r :YRShow<CR>
-
-    " Fuzzyfinder
-    nnoremap <silent> <leader>gt :FufTag<CR>
-    nnoremap <silent> <leader>gl :FufLine<CR>
-
-    " Quick compile
-    map <F4> :make<CR><C-w><Up>
-
-    " Quickrun
-    "let g:quickrun_config = {}
-    "let g:quickrun_config.php = {'command' : 'php', 'cmdopt' : '-r'}
-
-    " Sane regexes (optional)
-    "nnoremap / /\v
-    "vnoremap / /\v
-
-    " Self-expanatory
-    noremap <F1> <Esc>
-
-    " Switch buffers quickly
-    " NB: in case of double leader, some commands will await slight delay
-    noremap <Leader><Leader> <C-^>
-
-    " Better command line editing
-    cnoremap <C-j> <t_kd>
-    cnoremap <C-k> <t_ku>
-    cnoremap <C-a> <Home>
-    cnoremap <C-e> <End>
-
-    " Toggle folds using space
-    nnoremap <Space> za
-    vnoremap <Space> za
-
-    " Strip all that pesky trailing white space
-    nnoremap <silent> <leader>sw  :call Preserve("%s/\\s\\+$//e")<CR>
-
-    " Remove trailing whitespaces on save
-    autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
-
-    " Retab on save
-    "autocmd BufWritePre * :call retab
-
-    " Show available encodings dialog
-    nnoremap <silent><leader>me :FencView<CR>
-
-    " VimFiler
-    nnoremap <silent><leader>vf :VimFiler<CR>
-
-    " Toggle show/hide trailing whitespaces
-    " ...
-
-    " Switch CWD to the directory of the open buffer
-    map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-    " Remove the Windows ^M - when the encodings gets messed up
-    noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-    " Return to last edit position when opening files
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
-
-    " Remember info about open buffers on close
-    set viminfo^=%
-
-    " Method navigation
-    "map <C-j> ]]
-    "map <C-k> [[
-
-    " Tagsearch (optional)
-    "map <leader>o :tselect \
-
-    " Supertab
-    let g:SuperTabMappingForward = '<s-tab>'
-    let g:SuperTabMappingBackward = '<tab>'
-
-    " EasyMotion
-    " NB: comment out in case of conflict with other plugins!
-    let g:EasyMotion_leader_key = '<Leader>'
-
-    " Fugitive
-    map <leader>gc :Gcommit<CR>
-    map <leader>gs :Gstatus<CR>
-    map <leader>gl :Glog<CR>
-    map <leader>gb :Gbrowse<CR>
-    map <leader>gg :Ggrep<CR>
-
-    " Paste from system buffer when in insert mode"
-    inoremap <C-i> <C-r>*
-
+source ~/.vim/scripts/mappings.vim
 " }}}
 " Folding {{{
-
-    " Method
-    set foldmethod=syntax
-    set foldlevelstart=0            " modify for greedier folding
-
-    " Languages
-    let javaScript_fold=1           " JavaScript
-    let perl_fold=1                 " Perl
-    let php_folding=1               " PHP
-    let r_syntax_folding=1          " R
-    let ruby_fold=1                 " Ruby
-    let sh_fold_enabled=1           " shell-script
-    let xml_syntax_folding=1        " XML
-    let tex_syntax_folding=1        " LaTeX
-    "TODO: add some more!
-
+source ~/.vim/scripts/folding.vim
 "}}}
 " Script tweaks {{{
-
-    " Neocomplete cache
-    let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_smart_case = 1
-    let g:neocomplcache_enable_camel_case_completion = 1
-    let g:neocomplcache_enable_underbar_completion = 1
-    au FileType php set omnifunc=phpcomplete#CompletePHP
-    if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplcache_ctags_arguments_list = {
-     \ 'php' : '-R --languages=PHP --langmap=PHP:.php.inc --php-types=c+f+d'
-     \ }
-
-    " Syntastic
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
-
-    " ctrlp
-    let g:ctrlp_working_path_mode = 2
-    let g:ctrlp_max_height = 10                 " perfomance!
-    let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-        \ 'file': '\.exe$\|\.so$\|\.dll$|\.swp$',
-        \ }
-
-    " Powerline
-    let g:Powerline_symbols = 'fancy'           " requires patched fonts!
-    call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
-
-    " Use # to get a variable interpolation (inside of a string)}
-    " ysiw#   Wrap the token under the cursor in #{}
-    " Thanks to http://git.io/_XqKzQ
-    let g:surround_35  = "#{\r}"
-
-    " dbext
-    let g:dbext_default_profile_mysql_egrat = 'type=MYSQL:user=user:
-                \ passwd=root:dbname=dbname:host=hostname'
-
-    " VimClojure
-    let vimclojure#HighlightBuiltins = 1
-    let vimclojure#ParenRainbow = 1
-
-    " Rainbow parenthesis (optional)
-    let g:rbpt_colorpairs = [
-        \ ['brown',       'RoyalBlue3'],
-        \ ['Darkblue',    'SeaGreen3'],
-        \ ['darkgray',    'DarkOrchid3'],
-        \ ['darkgreen',   'firebrick3'],
-        \ ['darkcyan',    'RoyalBlue3'],
-        \ ['darkred',     'SeaGreen3'],
-        \ ['darkmagenta', 'DarkOrchid3'],
-        \ ['brown',       'firebrick3'],
-        \ ['gray',        'RoyalBlue3'],
-        \ ['black',       'SeaGreen3'],
-        \ ['darkmagenta', 'DarkOrchid3'],
-        \ ['Darkblue',    'firebrick3'],
-        \ ['darkgreen',   'RoyalBlue3'],
-        \ ['darkcyan',    'SeaGreen3'],
-        \ ['darkred',     'DarkOrchid3'],
-        \ ['red',         'firebrick3'],
-        \ ]
-
-    let g:rbpt_max = 16
-    let g:rbpt_loadcmd_toggle = 0
-
-    " Slime tmux
-    let g:slime_target = "tmux"
-
+source ~/.vim/scripts/tweaks.vim
 " }}}
 " Functions {{{
-
-    " List information about matching tags in a buffer
-    "function! BrowseTags(tagStr)
-        "new [Tag Brower]
-        "setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-
-        "put =taglist(a:tagStr)
-
-        "" Beautify it a little
-        "normal 1G
-        "while search('^{', 'W')
-            "call setline(".", split(getline("."), "\\(\\(}$\\)\\|\\('\\w\\+':\\)\\)\\@="))
-        "endw
-        "normal 1G
-    "endfunc
-
-    "Preserves the state, executes a command, and returns to the saved state
-    "From http://vimcasts.org/episodes/tidying-whitespace/
-    function! Preserve(command)
-        " Preparation: save last search, and cursor position.
-        let _s=@/
-        let l = line(".")
-        let c = col(".")
-        " Do the business:
-        execute a:command
-        " Clean up: restore previous search history, and cursor position
-        let @/=_s
-        call cursor(l, c)
-    endfunction
-
-    " Langmap indication: eng (dark blue) -> rus (dark red) [unused]
-    function! KeyMapHighlight()
-        if &iminsert == 0
-            hi StatusLine ctermfg=DarkBlue guifg=DarkBlue
-        else
-            hi StatusLine ctermfg=DarkRed guifg=DarkRed
-        endif
-    endfunction
+source ~/.vim/scripts/funs.vim
 " }}}
 " File type dependent {{{
-
-    " Force actionscript and flex types
-    au BufRead *.as set filetype=actionscript
-    au BufRead *.mxml set filetype=mxml
-    " User wrapping for tex, txt, md
-    au FileType tex set tw=79 fo=cqt wm=0
-    au FileType txt set tw=79 fo=cqt wm=0
-    au FileType md set tw=79 fo=cqt wm=0
-    au FileType txt set wrap
-    au FileType tex set wrap
-    au FileType md set wrap
-    " Set compiler for xetex files
-    au FileType tex set makeprg=xelatex\ %
-    " Tex pdf preview
-    au FileType tex map <F3> :!apvlv %:r.pdf<CR>
-    " Marker folding for vimscripts (including config file)
-    au FileType vim setlocal foldmethod=marker
-    "augroup filetype_vim
-        "au!
-        "au FileType vim setlocal foldmethod=marker
-    "augroup END
-
-    " Always rainbow!
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-
-    " Scala file type
-    au BufRead,BufNewFile *.scala set filetype=scala
-
-    " Disable spellcheck for scala, clojure
-    au FileType scala set spell!
-    au FileType clj set spell!
-
+source ~/.vim/scripts/files.vim
 " }}}
 " }}}
 " Appendix {{{
@@ -758,7 +122,7 @@
         " search tag: leader + o
         " diff: diffthis for each open buffer | diffoff
         " set pwd: leader + cd | :cd %:p:h
-        " yankring: F11
+        " yankring: leader + r
         " gundo: F5
         " make: F4
         " view: F3
@@ -766,7 +130,7 @@
         " clear search: leader + /
         " language: Ctrl + l (insert mode)
         " nerdtree: leader + nt, leader + sf (show current file), cd
-        " copy/paste from/to clipboard: leader + y, leader + p
+        " copy/paste from/to clipboard: leader + y, leader + p; ctrl + p (ins)
         " return to command mode: ctrl + [
         " toggle spellcheck: leader + ss
         " go to tag: leader + gt

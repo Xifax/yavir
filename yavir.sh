@@ -1,47 +1,56 @@
 #!/bin/sh
-# Install|backup script for Vim config
+# Install script for Vim config
 
-# Notify user
-echo "Setting up..."
+### Utility funs ###
+
+### Install script ###
 
 # If .vim || .vimrc exist -> backup those!
 if [ -d ~/.vim ]
     then
-        echo "Backupping your current .vim folder into .vim.backup"
+        echo "Backing up your current .vim folder into .vim.backup"
         mv ~/.vim ~/.vim.baka
 fi
 if [ -f ~/.vimrc ]
     then
-        echo "Backupping your current vim config into .vimrc.backup"
+        echo "Backing up your current vim config into .vimrc.backup"
         mv ~/.vimrc ~/.vimrc.baka
 fi
 
-# Download vimrc into ~
-# Present dialog option: either download vimrc only, or checkout full repo
+# Clone repo
+echo "Cloning Yavir..."
+hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git ~/.vim || {
+  echo "Oh noes! No git detected!"
+  exit
+}
 
-echo "Would you like to get vimrc only, or full git repository? (vimrc, repo)"
+# Symlink vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 
-select answer in "vimrc" "repo"; do
+# Additional installation options
+echo "Would you like to download some pretty fonts? (yes, no)"
+
+select answer in "yes" "no"; do
     case $answer in
-        # Download vimrc into ~
-        vimrc ) wget -O ~/.vimrc https://github.com/Xifax/yavir/raw/master/vimrc; break;;
-        # Or clone repo and symlink
-        repo ) git clone git://github.com/Xifax/yavir.git .vim; ln -s .vim/vimrc .vimrc; break;;
+        # Download fancy-powerline-patched fonts
+        yes ) git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
+        ~/.fonts/ubuntu-mono-powerline-ttf;
+        # Powerline-patched Inconsolata
+        wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
+        https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
+        Inconsolata-dz-Powerline.otf;
+        #TODO: should include Adobe Script Pro and other pretty fonts
+        # Update font cache
+        fc-cache -vf
+        break;;
+        # Do nothing
+        no ) echo "Powerline may look not as intended"
+        break;;
     esac
 done
 
-# Download fancy-powerline-patched fonts
-git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
-~/.fonts/ubuntu-mono-powerline-ttf
-
-wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
-https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
-Inconsolata-dz-Powerline.otf
-
-# Update font cache
-fc-cache -vf
-
 # Exuberant tags?
+# TODO: at least notify user to install these!
 
 # Launch vim!
 vim

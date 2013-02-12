@@ -1,7 +1,7 @@
 # Yet Another VIm Run commands (or 'config', if you would)
 
 Everybody does it! I mean, throws their hand-picked pile of befuddled Vim
-goodness onto the internets. Yes, that is all.
+goodness onto the internets. Yes, that is it.
 
 ## Intro
 
@@ -13,10 +13,6 @@ Also, notate bene.
 Voodoo magic:
 
     wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
-
-Another option is to get the whole repo manually:
-
-TODO
 
 You may also just clone repo and symlink vimrc:
 
@@ -35,11 +31,13 @@ Regarding plugin selection and possible customizations.
 ## Keymappings
 
 Described in config itself. May (or may not) duplicate those here.
+Actually, should do so, it will be useful for future reference.
+Should probably also include some visual chart on used mappings (generate one
+from mappings themselves!)
 
 ## TODO
 
-* source multi-part config (source .vimrc_module)
 * debug
+* remove obsolete and unused stuff
 * add some shiny things
 * remove all the clusterfuck(s)
-* and so on
