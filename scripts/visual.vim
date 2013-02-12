@@ -2,36 +2,55 @@
 " Configure how everything looks: colorschemes, fonts, gui, highlights, etc.
 
 " NB: By default, will use terminal colorscheme
-"colorscheme darkspectrum
+
 " Switching to light version in case of gui
 if has("gui_running")
-    "set background=light
+    " Eye-candy colorscheme
     colorscheme badwolf
+    " Some nice alternatives: solarized, darkspectrum, BusyBee
 
-    "" The best font ever (bad for cyrillic characters, but oh well)
-    "set guifont=Ricty\ 14
-    "" Second best font ever (and free!)
-    "set guifont=Inconsolata\ 14
+    """ Hark! Fonts ahead! """
 
-    """ Other recommended fonts: """
+    "" Personal favorites:
+    " One of the best
+    set guifont=PragmataPro\ 13
+
+    """ Wonderful alternatives """
+
+    "" Consolas open source clone (some unicode symbols are missing)
     "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
-    " Very good too
-    set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
+
+    "" Unholy union
+    "set guifont=Ricty\ 14
+
+    "" Ubuntu goodness
+    "set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
+
+    "" Adobe goodness (very nice!)
+    "set guifont=Source\ Code\ Pro\ for\ Powerline\ 13
+
+    "" Apple goodness
+    " set guifont=Menlo\ for\ Powerline\ 13"
+
     "" Propietary MS goodness (mmm, tasty!)
     "set guifont=Consolas\ 14
-    "" Also nice:
-    "" DejaVu Mono, Droid Mono, Ubuntu Mono,
-    "" Menlo, Meslo, Monaco, Mensch
+
+
+    """ Other recommended fonts: """
+
+    "" Bistream Vera
+    "" DejaVu Mono, Droid Mono
+    "" Monaco, Mensch
     "" Nimbus Mono L
-    "" Source Sans Pro, Source Code Pro
+    "" Source Sans Pro
+
+    " see this repo for powerline fonts:
+    " https://github.com/Lokaltog/powerline-fonts
+
     """ End of fonts """
 
-    " NB: Inconsolata & Ubuntu Mono have some problems with italics!"
-
     " Quickswitch fonts
-    map <F6> :set guifont=Inconsolata\ 14<CR>
-    map <F7> :set guifont=Ricty\ 14<CR>
-    map <F8> :set guifont=Ubuntu\ Mono\ 14<CR>
+    " ...
 endif
 
 set wildmenu        " show hint on command input
@@ -58,17 +77,9 @@ else
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Highlight trailing whitespace in Vim on non empty lines, but not while
-" typing in insert mode!
-"highlight ExtraWhitespace ctermbg=red guibg=Orange
-"au ColorScheme * highlight ExtraWhitespace guibg=Orange
-"au BufEnter * match ExtraWhitespace /\S\zs\s\+$/
-"au InsertEnter * match ExtraWhitespace /\S\zs\s\+\%#\@<!$/
-"au InsertLeave * match ExtraWhiteSpace /\S\zs\s\+$/
-
 " Custom invisibles
 set list
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:↵,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 
 "}}}

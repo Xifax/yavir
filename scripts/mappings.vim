@@ -42,7 +42,7 @@
 
     " Lusty juggler
     nnoremap <silent> <leader>z :LustyJuggler<CR>
-    nnoremap <silent> <C-l> :LustyBufferExplorer<CR>
+    nnoremap <silent> <C-a> :LustyBufferExplorer<CR>
     nnoremap <silent> <leader>sb :LustyBufferGrep<CR>
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 

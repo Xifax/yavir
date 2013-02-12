@@ -34,12 +34,14 @@ select answer in "yes" "no"; do
     case $answer in
         # Download fancy-powerline-patched fonts
         yes ) git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
-        ~/.fonts/ubuntu-mono-powerline-ttf;
+            ~/.fonts/ubuntu-mono-powerline-ttf;
         # Powerline-patched Inconsolata
         wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
         https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
         Inconsolata-dz-Powerline.otf;
-        #TODO: should include Adobe Script Pro and other pretty fonts
+        # Other powerline fonts
+        git clone https://github.com/Lokaltog/powerline-fonts.git \
+            ~/.fonts/powerline-fonts
         # Update font cache
         fc-cache -vf
         break;;

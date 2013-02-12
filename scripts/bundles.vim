@@ -101,6 +101,7 @@
         """ PHP """
         Bundle 'php.vim'
         Bundle 'paulyg/Vim-PHP-Stuff'
+        Bundle 'laurentb/vim-cute-php'
         Bundle 'spf13/PIV'
         "Bundle 'phpcomplete.vim'
         Bundle 'qbbr/vim-symfony'

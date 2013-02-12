@@ -116,7 +116,7 @@ source ~/.vim/scripts/files.vim
     " TODOO: add mnemonics
         " easymotion: leader + w, leader + b, leader + ge, leader + j
         " command-t: leader + a (tags), ctrl + p (files), ctrl + m (MRU)
-        " lusty juggler: leader + lf (explorer), ctrl + l (buffers), lead + sb
+        " lusty juggler: leader + lf (explorer), ctrl + a (buffers), lead + sb
         " lusty buffer: leader + z
         " ctrl: Ctrl + p
         " tags: leader + et
