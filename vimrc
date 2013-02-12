@@ -114,7 +114,7 @@ source ~/.vim/scripts/files.vim
 " Appendix {{{
     " Shortcuts {{{
         " easymotion: leader + w, leader + b, leader + ge, leader + j
-        " command-t: leader + a, leader + q
+        " command-t: leader + a (tags), ctrl + p (files), ctrl + m (MRU)
         " lusty juggler: leader + lf, leader + lb
         " lusty buffer: leader + z
         " ctrl: Ctrl + p, Ctrl + f, Ctrl + b

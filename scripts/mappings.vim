@@ -45,18 +45,11 @@
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp [TODO: DEBUG!!!11one]
-    nnoremap <C-M> :CtrlPMRU<CR>
-    let g:ctrlp_map = ',q'                  " search files
+    nmap <C-M> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
-    " search all buffers for tags
-    "nmap ,a :CtrlPBufTagAll<CR>
-    " search all buffers
-    nmap ,x :CtrlPBuffer<CR>
     " search line in all buffers
     nmap ,l :CtrlPLine<CR>
-    " Unmap enter key!
-    unmap <CR>
 
     " NERDTree
     nnoremap <silent><Leader>nt :NERDTreeToggle<CR>
