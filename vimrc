@@ -10,7 +10,7 @@
     "
     " Additional scripts are installed using Vundle. Vundle itself is
     " installed automatically (requires git in path).
-    " Each configuration section is located into separate script to prevent
+    " Each configuration section is located in separate scripts to prevent
     " utter confusion (use gf to quickly go to sourced script).
     "
     " And remember: loose configs are sinking battleships!
@@ -113,13 +113,13 @@ source ~/.vim/scripts/files.vim
 " }}}
 " Appendix {{{
     " Shortcuts {{{
+    " TODOO: add mnemonics
         " easymotion: leader + w, leader + b, leader + ge, leader + j
         " command-t: leader + a (tags), ctrl + p (files), ctrl + m (MRU)
-        " lusty juggler: leader + lf, leader + lb
+        " lusty juggler: leader + lf (explorer), ctrl + l (buffers), lead + sb
         " lusty buffer: leader + z
-        " ctrl: Ctrl + p, Ctrl + f, Ctrl + b
+        " ctrl: Ctrl + p
         " tags: leader + et
-        " search tag: leader + o
         " diff: diffthis for each open buffer | diffoff
         " set pwd: leader + cd | :cd %:p:h
         " yankring: leader + r
@@ -143,6 +143,7 @@ source ~/.vim/scripts/files.vim
         " strip endline whitespaces: leader + sw
         " unicode char (insert mode): ctrl + v + u____
         " manage encoding: leader + me
+        " edit color: leader + ce
         " vimfiler explorer: leader + vf
         " surround: ds( | cs([ | csw(
         " surround[visual]: s[

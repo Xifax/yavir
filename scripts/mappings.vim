@@ -42,9 +42,11 @@
 
     " Lusty juggler
     nnoremap <silent> <leader>z :LustyJuggler<CR>
+    nnoremap <silent> <C-l> :LustyBufferExplorer<CR>
+    nnoremap <silent> <leader>sb :LustyBufferGrep<CR>
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
-    " Ctrlp [TODO: DEBUG!!!11one]
+    " Ctrlp
     nmap <C-M> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
