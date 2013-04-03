@@ -69,6 +69,8 @@ syntax on           " do higlight syntax
 
 :set guioptions-=m  " remove menu bar
 :set guioptions-=T  " remove toolbar
+:set guioptions-=L  " remove left scrollbar
+:set guioptions-=r  " remove right scrollbar
 
 " Highlight 80st column
 if exists('+colorcolumn')

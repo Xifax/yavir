@@ -11,7 +11,7 @@
         " markup easily in html, css and so on
         Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
         " Github issues
-        Bundle 'mklabs/vim-issues'
+        "Bundle 'mklabs/vim-issues'
         " colorful parenthesis
         "Bundle 'nablaa/vim-rainbow-parenthesis'
         Bundle 'kien/rainbow_parentheses.vim'
@@ -28,7 +28,10 @@
         " graphical undo tree
         Bundle 'Gundo'
         " tab completion (not so good, actually)
-        Bundle 'SuperTab-continued.'
+        "Bundle 'SuperTab-continued.'
+        Bundle 'ervandew/supertab'
+        " completion cache
+        Bundle 'neocomplcache'
         " [UNUSED] version control interaction (svn, git and hg)
         "Bundle 'vcscommand.vim'
         " automatic commenter
@@ -37,8 +40,6 @@
         Bundle 'Syntastic'
         " majestic status line
         Bundle 'Lokaltog/vim-powerline'
-        " completion cache
-        Bundle 'neocomplcache'
         " Zoom main window
         Bundle 'ZoomWin'
         " Tiled window management (actually, not so useful)
@@ -67,6 +68,8 @@
         "Bundle 'UniCycle'
         " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
         Bundle 'unimpaired.vim'
+        " Project rooter
+        "Bundle 'airblade/vim-rooter'
     " }}}
     " Colorschemes {{{
         " Probably the best colorscheme ever
@@ -74,12 +77,15 @@
         " Solorized + jellybeans + tomorrow night
         Bundle 'w0ng/vim-hybrid'
         " The best dark contrast colorscheme(s)
-        Bundle 'darkspectrum'
         Bundle 'sjl/badwolf'
+        Bundle 'morhetz/gruvbox'
+        Bundle 'chriskempson/base16-vim'
+        Bundle 'darkspectrum'
         Bundle 'tomasr/molokai'
         Bundle 'rdark'
         Bundle 'BusyBee'
         Bundle 'jellybeans.vim'
+        " Other nice themes
         Bundle 'tpope/vim-vividchalk'
         Bundle 'daylerees/colour-schemes'
         Bundle 'larssmit/vim-getafe'
@@ -99,21 +105,22 @@
         Bundle 'groenewege/vim-less'
         "Bundle 'matchit.vim'
         """ PHP """
-        Bundle 'php.vim'
-        Bundle 'paulyg/Vim-PHP-Stuff'
+        "Bundle 'php.vim'
+        "Bundle 'paulyg/Vim-PHP-Stuff'
         Bundle 'laurentb/vim-cute-php'
-        Bundle 'spf13/PIV'
+        "Bundle 'spf13/PIV'
         "Bundle 'phpcomplete.vim'
-        Bundle 'qbbr/vim-symfony'
+        "Bundle 'qbbr/vim-symfony'
         "Bundle 'travisj/php-xdebug-vim'
         "Bundle 'joonty/vim-phpqa'
         """ Python """
-        "Bundle 'Python-mode-klen'
+        Bundle 'Python-mode-klen'
+        Bundle 'davidhalter/jedi-vim'
         Bundle 'python.vim'
         Bundle 'ehamberg/vim-cute-python'
         "Bundle 'Pydiction'
         """ Actionscript """
-        "Bundle 'Flex-4'
+        Bundle 'Flex-4'
         """ LaTeX """
         Bundle 'LaTeX-Box'
         """ Haskell """

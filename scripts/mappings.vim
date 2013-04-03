@@ -47,7 +47,7 @@
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp
-    nmap <C-M> :CtrlPMRU<CR>
+    "nmap <C-M> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
     " search line in all buffers
@@ -126,7 +126,7 @@
     " VimFiler
     nnoremap <silent><leader>vf :VimFiler<CR>
 
-    " Switch CWD to the directory of the open buffer
+    " Switch CWD to the directory of the open buffer [rooter already does it]
     map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
     " Remove the Windows ^M - when the encodings gets messed up

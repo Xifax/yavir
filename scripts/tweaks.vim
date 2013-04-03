@@ -22,6 +22,13 @@
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
 
+    " Syntastic syntax checkers
+    "let g:syntastic_python_checkers=['python']
+    let g:syntastic_phpcs_disable=1
+
+    " Python-mode
+    let g:pymode_rope=0
+
     " ctrlp
     let g:ctrlp_working_path_mode = 2
     let g:ctrlp_max_height = 10                 " perfomance!
@@ -33,11 +40,6 @@
     " Powerline
     let g:Powerline_symbols = 'fancy'           " requires patched fonts!
     call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
-
-    " Use # to get a variable interpolation (inside of a string)}
-    " ysiw#   Wrap the token under the cursor in #{}
-    " Thanks to http://git.io/_XqKzQ
-    let g:surround_35  = "#{\r}"
 
     " dbext
     let g:dbext_default_profile_mysql_egrat = 'type=MYSQL:user=user:

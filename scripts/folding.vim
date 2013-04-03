@@ -2,7 +2,7 @@
 
 " Method
 set foldmethod=syntax
-set foldlevelstart=0            " modify for greedier folding
+set foldlevelstart=1            " modify for greedier|lenient folding
 
 " Languages
 let javaScript_fold=1           " JavaScript
