@@ -20,16 +20,6 @@
     " Marker folding for vimscripts (including config file)
     au FileType vim setlocal foldmethod=marker
 
-    " Always rainbow!
-    "au VimEnter * RainbowParenthesesToggle
-    "au Syntax * RainbowParenthesesLoadRound
-    "au Syntax * RainbowParenthesesLoadSquare
-    "au Syntax * RainbowParenthesesLoadBraces
-
-    "Autocomplete
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-
     " Scala file type
     au BufRead,BufNewFile *.scala set filetype=scala
 

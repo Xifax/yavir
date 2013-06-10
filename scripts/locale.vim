@@ -12,8 +12,10 @@ highlight lCursor guifg=NONE guibg=Orange
 inoremap <C-L> <C-^>
 " Toggle spellcheck on/off
 " TODO: fix it!
+" TODO: disable spellcheck by default
 map <silent> <leader>ns :setlocal spell!<CR>
 " Spelling correction (ёжЪ компатиблЪ)
 :setlocal spell spelllang=ru_yo,en_us
+set nospell
 
 "}}}

@@ -4,17 +4,22 @@
     " NB: no comments allowed on the line with the bundle name!
     " Listing all the bundles we want:
     " Must have {{{
+        " Title screen
+        Bundle 'mhinz/vim-startify'
+        " Improved text objects"
+        Bundle 'mhinz/TextObjectify'
         " github interaction
         Bundle 'tpope/vim-fugitive'
         " tig for vim
         Bundle 'gregsexton/gitv'
         " markup easily in html, css and so on
-        Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+        "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
         " Github issues
         "Bundle 'mklabs/vim-issues'
         " colorful parenthesis
         "Bundle 'nablaa/vim-rainbow-parenthesis'
-        Bundle 'kien/rainbow_parentheses.vim'
+        "Bundle 'kien/rainbow_parentheses.vim'
+        Bundle 'amdt/vim-niji'
         " vim-script lib
         Bundle 'L9'
         " auto-surround
@@ -29,7 +34,7 @@
         Bundle 'Gundo'
         " tab completion (not so good, actually)
         "Bundle 'SuperTab-continued.'
-        Bundle 'ervandew/supertab'
+        "Bundle 'ervandew/supertab'
         " completion cache
         Bundle 'neocomplcache'
         " [UNUSED] version control interaction (svn, git and hg)
@@ -94,9 +99,11 @@
         " Language agnostic
         Bundle 'thinca/vim-quickrun'
         """ HTML """
+        Bundle 'mattn/zencoding-vim'
         Bundle 'briangershon/html5.vim'
         Bundle 'gregsexton/MatchTag'
         Bundle 'tpope/vim-ragtag'
+        Bundle 'gcmt/breeze.vim'
         """ CSS """
         Bundle 'wavded/vim-stylus'
         """ JS """
@@ -107,16 +114,17 @@
         """ PHP """
         "Bundle 'php.vim'
         "Bundle 'paulyg/Vim-PHP-Stuff'
-        Bundle 'laurentb/vim-cute-php'
+        Bundle 'vim-php/phptags'
+        "Bundle 'laurentb/vim-cute-php'
         "Bundle 'spf13/PIV'
         "Bundle 'phpcomplete.vim'
         "Bundle 'qbbr/vim-symfony'
         "Bundle 'travisj/php-xdebug-vim'
         "Bundle 'joonty/vim-phpqa'
         """ Python """
-        Bundle 'Python-mode-klen'
-        Bundle 'davidhalter/jedi-vim'
         Bundle 'python.vim'
+        Bundle 'klen/python-mode'
+        Bundle 'davidhalter/jedi-vim'
         Bundle 'ehamberg/vim-cute-python'
         "Bundle 'Pydiction'
         """ Actionscript """

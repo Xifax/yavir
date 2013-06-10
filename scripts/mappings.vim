@@ -141,14 +141,6 @@
     " Remember info about open buffers on close
     set viminfo^=%
 
-    " Method navigation
-    "map <C-j> ]]
-    "map <C-k> [[
-
-    " Supertab [TODO: check, when there're sudden lags on tab, e.g. using rope]
-    let g:SuperTabMappingForward = '<s-tab>'
-    let g:SuperTabMappingBackward = '<tab>'
-
     " EasyMotion
     " NB: comment out in case of conflict with other plugins!
     let g:EasyMotion_leader_key = '<Leader>'
@@ -161,10 +153,19 @@
     map <leader>gg :Ggrep<CR>
 
     " Copy/paste directly to/from system clipboard
+    " TODO: sometimes doesn't work as it should, FIX
     map <silent><leader>y "+y
     nnoremap <silent><leader>p "+p
 
     " Paste from system buffer when in insert mode
     inoremap <C-p> <C-r>*
+
+    " Zen coding (emmet)
+    "let g:user_zen_leader_key = '<C-e>'
+    let g:user_zen_expandabbr_key = '<C-e>'
+
+    " Omnicomplcache tab-completion
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " }}}
