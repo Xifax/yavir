@@ -12,7 +12,7 @@ Also, notate bene.
 
 Voodoo magic:
 
-    wget -qO- git://github.com/Xifax/yavir.git | sh
+    wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
 
 You may also just clone repo and symlink vimrc:
 
@@ -37,6 +37,6 @@ from mappings themselves!)
 
 ## TODO
 
+* implement random font|colorscheme switcher
 * implement uninstall command for script (restore backed up .vim|vimrc, etc)
-* remove all the clusterfuck(s)
 * ponder wrapping for markdown, text and source code
