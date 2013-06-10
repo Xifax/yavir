@@ -12,7 +12,7 @@ Also, notate bene.
 
 Voodoo magic:
 
-    wget -qO- https://github.com/Xifax/yavir/raw/master/yavir.sh | sh
+    wget -qO- git://github.com/Xifax/yavir.git | sh
 
 You may also just clone repo and symlink vimrc:
 
@@ -37,14 +37,6 @@ from mappings themselves!)
 
 ## TODO
 
-* implement random font|colorscheme switcher
-* somehow unbind ENTER from MRU when working with CtrlP (arrghh!), it breaks
-quickfix window interaction
 * implement uninstall command for script (restore backed up .vim|vimrc, etc)
-* remove obsolete and unused stuff
-* debug
-* add some shiny things
 * remove all the clusterfuck(s)
-* ponder auto-folding and default fold level
-(as of now, it will fold itself again and again)
 * ponder wrapping for markdown, text and source code
