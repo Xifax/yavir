@@ -9,18 +9,24 @@
 if [ -d ~/.vim ]
     then
         echo "Backing up your current .vim folder into .vim.backup"
-        mv ~/.vim ~/.vim.baka
+	# Check if backup already exists
+	if [ -d ~/.vim.baka ]
+		then
+		rm -rf ~/.vim.baka
+		mv ~/.vim ~/.vim.baka
+	fi
 fi
 if [ -f ~/.vimrc ]
     then
         echo "Backing up your current vim config into .vimrc.backup"
+	# Check if backup already exists
         mv ~/.vimrc ~/.vimrc.baka
 fi
 
 # Clone repo
 echo "Cloning Yavir..."
 hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git ~/.vim || {
-  echo "Oh noes! No git detected!"
+  echo "Oh noes! Could not clone repo! Either it already exists or there's no git available."
   exit
 }
 
