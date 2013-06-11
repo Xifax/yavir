@@ -8,23 +8,24 @@
 # If .vim || .vimrc exist -> backup those!
 if [ -d ~/.vim ]
     then
-        echo "Backing up your current .vim folder into .vim.backup"
+        echo "Backing up your current .vim folder into .vim.baka..."
 	# Check if backup already exists
 	if [ -d ~/.vim.baka ]
 		then
-		rm -rf ~/.vim.baka
-		mv ~/.vim ~/.vim.baka
+			echo "Updating backup"
+			rm -rf ~/.vim.baka
+			mv ~/.vim ~/.vim.baka
 	fi
 fi
 if [ -f ~/.vimrc ]
     then
-        echo "Backing up your current vim config into .vimrc.backup"
+        echo "Backing up your current vim config into .vimrc.baka..."
 	# Check if backup already exists
         mv ~/.vimrc ~/.vimrc.baka
 fi
 
 # Clone repo
-echo "Cloning Yavir..."
+echo "Cloning repo..."
 hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git ~/.vim || {
   echo "Oh noes! Could not clone repo! Either it already exists or there's no git available."
   exit
@@ -34,12 +35,12 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git
 ln -s ~/.vim/vimrc ~/.vimrc
 
 # Additional installation options
-echo "Would you like to download some pretty fonts? (yes, no)"
+echo ""
+read -p "Would you like to download some pretty fonts? (y/n)" answer
 
-select answer in "yes" "no"; do
-    case $answer in
+if [ "$answer" = "y" ]; then
         # Download fancy-powerline-patched fonts
-        yes ) git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
+        git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
             ~/.fonts/ubuntu-mono-powerline-ttf;
         # Powerline-patched Inconsolata
         wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
@@ -50,12 +51,10 @@ select answer in "yes" "no"; do
             ~/.fonts/powerline-fonts
         # Update font cache
         fc-cache -vf
-        break;;
+else
         # Do nothing
-        no ) echo "Powerline may look not as intended"
-        break;;
-    esac
-done
+        echo "Powerline may look not as intended"
+fi
 
 # Exuberant tags?
 # TODO: at least notify user to install these!

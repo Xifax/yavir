@@ -67,7 +67,7 @@
         " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
         Bundle 'unimpaired.vim'
         " Project rooter
-        Bundle 'airblade/vim-rooter'
+        "Bundle 'airblade/vim-rooter'
     " }}}
     " Colorschemes {{{
         " Probably the best colorscheme ever
