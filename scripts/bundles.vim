@@ -12,13 +12,9 @@
         Bundle 'tpope/vim-fugitive'
         " tig for vim
         Bundle 'gregsexton/gitv'
-        " markup easily in html, css and so on
-        "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-        " Github issues
+        " Github issues [does not work as it should]
         "Bundle 'mklabs/vim-issues'
         " colorful parenthesis
-        "Bundle 'nablaa/vim-rainbow-parenthesis'
-        "Bundle 'kien/rainbow_parentheses.vim'
         Bundle 'amdt/vim-niji'
         " vim-script lib
         Bundle 'L9'
@@ -32,9 +28,6 @@
         Bundle 'repeat.vim'
         " graphical undo tree
         Bundle 'Gundo'
-        " tab completion (not so good, actually)
-        "Bundle 'SuperTab-continued.'
-        "Bundle 'ervandew/supertab'
         " completion cache
         Bundle 'neocomplcache'
         " [UNUSED] version control interaction (svn, git and hg)
@@ -74,7 +67,7 @@
         " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
         Bundle 'unimpaired.vim'
         " Project rooter
-        "Bundle 'airblade/vim-rooter'
+        Bundle 'airblade/vim-rooter'
     " }}}
     " Colorschemes {{{
         " Probably the best colorscheme ever
@@ -164,8 +157,6 @@
         Bundle 'sjl/clam.vim'
     " }}}
     " Files & buffers {{{
-        " Dynamic file search (needs to be compiled + ruby)
-        "Bundle 'git://git.wincent.com/command-t.git'
         " File tree
         Bundle 'The-NERD-tree'
         " Most recent files (and much more!)
@@ -190,10 +181,6 @@
         "Bundle 'argtextobj.vim'
     " }}}
     " Misc {{{
-        " My vim cannot be so multi(over)-tasked!
-        "Bundle 'ironcamel/vimchat'
-        " Question/letters from vim mailing list
-        "Bundle 'chrisbra/vim_faq'
         " Draw ASCII stuff
         Bundle 'DrawIt'
         " Manage encoding
