@@ -34,32 +34,20 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git
 # Symlink vimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 
-# Additional installation options
-echo ""
 
-read -p "Would you like to download some pretty fonts? (y/n)" answer
-case $answer in
-    # Get fancy fonts
-    [Yy]* )
-        # Download fancy-powerline-patched fonts
-        git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
-            ~/.fonts/ubuntu-mono-powerline-ttf;
-        # Powerline-patched Inconsolata
-        wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
-        https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
-        Inconsolata-dz-Powerline.otf;
-        # Other powerline fonts
-        git clone https://github.com/Lokaltog/powerline-fonts.git \
-            ~/.fonts/powerline-fonts
-        # Update font cache
-        fc-cache -vf
-        break;;
-    # Do nothing
-    [Nn]* )
-        echo "Powerline may look not as intended"
-        break;;
-    * ) echo "Please answer yes or no.";;
-esac
+# Download fancy-powerline-patched fonts
+git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
+    ~/.fonts/ubuntu-mono-powerline-ttf;
+# Powerline-patched Inconsolata
+wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
+https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
+Inconsolata-dz-Powerline.otf;
+# Other powerline fonts
+git clone https://github.com/Lokaltog/powerline-fonts.git \
+    ~/.fonts/powerline-fonts
+# Update font cache
+fc-cache -vf
+
 
 # Exuberant tags?
 # TODO: at least notify user to install these!
