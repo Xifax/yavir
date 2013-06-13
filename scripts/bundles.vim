@@ -149,7 +149,7 @@
         " Background indexer
         "Bundle 'indexer.tag.gz'
         " Automatic tags generation
-        "Bundle 'easytags.vim'
+        Bundle 'xolox/vim-misc'
         Bundle 'xolox/vim-easytags'
         " Project search
         Bundle 'mileszs/ack.vim'
