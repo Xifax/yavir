@@ -18,7 +18,7 @@
     " Enable completion for those file types
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete

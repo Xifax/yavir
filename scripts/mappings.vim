@@ -145,6 +145,11 @@
     " NB: comment out in case of conflict with other plugins!
     let g:EasyMotion_leader_key = '<Leader>'
 
+    " Breeze: EasyMotion for html
+    map <leader>m :BreezeMatchTag<CR>
+    map <leader>hf :BreezeJumpF<CR>
+    map <leader>hb :BreezeJumpB<CR>
+
     " Fugitive
     map <leader>gc :Gcommit<CR>
     map <leader>gs :Gstatus<CR>
