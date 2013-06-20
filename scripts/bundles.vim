@@ -23,7 +23,7 @@
         " yank and paste
         Bundle 'YankRing.vim'
         " light-weight implementation of EMACS kill-ring
-        Bundle 'maxbrunsfeld/vim-yankstack'
+        "Bundle 'maxbrunsfeld/vim-yankstack'
         " Context aware pasting (indentation)
         Bundle 'sickill/vim-pasta'
         " automatic repeater (not that one)
