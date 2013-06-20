@@ -18,7 +18,7 @@ if has("gui_running")
     """ Wonderful alternatives """
 
     "" Consolas open source clone (some unicode symbols are missing)
-    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
+    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 13
 
     "" Unholy union
     "set guifont=Ricty\ 14

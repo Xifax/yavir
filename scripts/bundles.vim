@@ -22,6 +22,8 @@
         Bundle 'surround.vim'
         " yank and paste
         Bundle 'YankRing.vim'
+        " light-weight implementation of EMACS kill-ring
+        Bundle 'maxbrunsfeld/vim-yankstack'
         " Context aware pasting (indentation)
         Bundle 'sickill/vim-pasta'
         " automatic repeater (not that one)
@@ -34,8 +36,9 @@
         "Bundle 'vcscommand.vim'
         " automatic commenter
         Bundle 'The-NERD-Commenter'
-        "syntax checker
-        Bundle 'Syntastic'
+        " semi-universal syntax checker
+        "Bundle 'Syntastic'
+        Bundle 'scrooloose/syntastic'
         " majestic status line
         Bundle 'Lokaltog/vim-powerline'
         " Zoom main window
@@ -58,8 +61,8 @@
         Bundle 'Raimondi/delimitMate'
         " Tags, tags, tags!
         Bundle 'Tagbar'
-        " [UNUSED] Shell inside (may require additional steps to install)
-        "Bundle 'Conque-Shell'
+        " Shell inside
+        Bundle 'rosenfeld/conque-term'
         " Tmux client
         Bundle 'kikijump/tslime.vim'
         " [BUG] Unicode symbols autoconversion
@@ -83,10 +86,12 @@
         Bundle 'rdark'
         Bundle 'BusyBee'
         Bundle 'jellybeans.vim'
+        Bundle 'goatslacker/mango.vim'
         " Other nice themes
         Bundle 'tpope/vim-vividchalk'
         Bundle 'daylerees/colour-schemes'
         Bundle 'larssmit/vim-getafe'
+        Bundle 'xoria256.vim'
     "}}}
     " Languages & frameworks {{{
         " Language agnostic
@@ -99,11 +104,13 @@
         Bundle 'gcmt/breeze.vim'
         """ CSS """
         Bundle 'wavded/vim-stylus'
+        "Bundle 'skammer/vim-css-color'
         """ JS """
+        "Bundle 'pangloss/vim-javascript'
+        Bundle 'jelera/vim-javascript-syntax'
         Bundle 'kchmck/vim-coffee-script'
         """ LESS """
         Bundle 'groenewege/vim-less'
-        "Bundle 'matchit.vim'
         """ PHP """
         "Bundle 'php.vim'
         "Bundle 'paulyg/Vim-PHP-Stuff'
