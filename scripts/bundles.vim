@@ -30,11 +30,9 @@
         Bundle 'repeat.vim'
         " graphical undo tree
         Bundle 'Gundo'
-        " completion cache
-        "Bundle 'neocomplcache'
         " New version of neocomplcache
         Bundle 'Shougo/neocomplete.vim'
-        " Alternative completion system (the fastest one)
+        " Alternative completion system (the fastest one?) [good for python]
         "Bundle 'Valloric/YouCompleteMe'
         " [UNUSED] version control interaction (svn, git and hg)
         "Bundle 'vcscommand.vim'
@@ -56,7 +54,7 @@
         Bundle 'Rykka/colorv.vim'
         " Indents visualised {{{
             Bundle 'Indent-Guides'
-            Bundle 'Yggdroot/indentLine'
+            "Bundle 'Yggdroot/indentLine'
         "}}}
         " Align tabulation and stuff
         Bundle 'Tabular'
@@ -136,8 +134,8 @@
         " Python {{{
             Bundle 'python.vim'
             Bundle 'klen/python-mode'
-            Bundle 'davidhalter/jedi-vim'
             Bundle 'ehamberg/vim-cute-python'
+            "Bundle 'davidhalter/jedi-vim'
             "Bundle 'Pydiction'
         "}}}
         " Actionscript {{{

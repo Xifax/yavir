@@ -23,13 +23,8 @@
 " }}}
 " What else to do {{{
 " TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
-    " TODO: FIX BLINKING (whitespace check?)
-    " TODO: FIX omnicomplete case (sic!)
-    " TODO: what to do with spellfiles incompatibility?
     " TODO: CamelCaseMotion breaks EasyMotion (sic!)
     " TODO: argtextobj breaks spellcheck (sic!!1)
-    " TODO: surround bindings
-    " TODO: ctags|tagbar config
     " TODO: tweak quickrun (to run without php tags, etc)
     " TODO: sources list
     " TODO: add automatic conversion: -- to long dash for txt and tex
@@ -93,6 +88,8 @@
         source ~/.vim/scripts/mappings.vim
         " Folding
         source ~/.vim/scripts/folding.vim
+        " Autocomplete options
+        source ~/.vim/scripts/autocomplete.vim
         " Script tweaks
         source ~/.vim/scripts/tweaks.vim
         " Functions
