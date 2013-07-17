@@ -44,4 +44,7 @@
         au BufReadPost * if &modifiable | retab | endif
     endif
 
+    " Change current working dir to project root automatically
+    "au BufEnter * if &ft != 'help' | call ProjectRootCD() | endif
+
 " }}}

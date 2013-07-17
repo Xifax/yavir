@@ -1,7 +1,7 @@
 " Behaviour {{{
 " Core options for Vim go here.
 
-set autoindent              " always set autoindenting on
+set smartindent             " always set autoindenting on
 set copyindent              " copy the previous indentation on autoindenting
 set ignorecase              " ignore case when searching
 " ignore case if search pattern is all lowercase, case-sensitive otherwise
