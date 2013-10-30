@@ -8,9 +8,9 @@
     let g:syntastic_auto_loc_list=1
 
     " Syntastic syntax checkers
-    "let g:syntastic_python_checkers=['python']
+    let g:syntastic_python_checkers=['python']
     let g:syntastic_phpcs_disable=1
-    let g:syntastic_js_checkers=[]
+    let g:syntastic_js = ['jshint']
 
     " Python-mode
     let g:pymode_rope=0

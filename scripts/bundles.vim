@@ -80,6 +80,7 @@
         " Probably the best colorschemes ever {{{
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'sjl/badwolf'
+            Bundle 'nielsmadan/harlequin'
             Bundle 'w0ng/vim-hybrid'
         "}}}
         " The best dark contrast colorscheme(s) {{{
@@ -103,7 +104,7 @@
         " Language agnostic
         Bundle 'thinca/vim-quickrun'
         " HTML {{{
-            Bundle 'mattn/zencoding-vim'
+            Bundle 'mattn/emmet-vim'
             Bundle 'briangershon/html5.vim'
             Bundle 'gregsexton/MatchTag'
             Bundle 'tpope/vim-ragtag'

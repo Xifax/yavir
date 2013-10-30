@@ -166,8 +166,8 @@
     inoremap <C-p> <C-r>*
 
     " Zen coding (emmet)
-    "let g:user_zen_leader_key = '<C-e>'
-    let g:user_zen_expandabbr_key = '<C-e>'
+    "let g:user_emmet_leader_key = '<C-e>'
+    let g:user_emmet_expandabbr_key = '<C-e>'
 
     " Omnicomplcache tab-completion
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

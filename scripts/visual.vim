@@ -13,27 +13,27 @@ if has("gui_running")
 
     "" Personal favorites:
     " One of the best
-    set guifont=PragmataPro\ 13
+    set guifont=PragmataPro\ 16
 
     """ Wonderful alternatives """
 
     "" Consolas open source clone (some unicode symbols are missing)
-    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 13
+    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 15
 
     "" Unholy union
-    "set guifont=Ricty\ 14
+    "set guifont=Ricty\ 15
 
     "" Ubuntu goodness
-    "set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
+    "set guifont=Ubuntu\ Mono\ for\ Powerline\ 16
 
     "" Adobe goodness (very nice!)
-    "set guifont=Source\ Code\ Pro\ for\ Powerline\ 13
+    "set guifont=Source\ Code\ Pro\ for\ Powerline\ 15
 
     "" Apple goodness
-    " set guifont=Menlo\ for\ Powerline\ 13"
+    " set guifont=Menlo\ for\ Powerline\ 15"
 
     "" Propietary MS goodness (mmm, tasty!)
-    "set guifont=Consolas\ 14
+    "set guifont=Consolas\ 15
 
 
     """ Other recommended fonts: """
