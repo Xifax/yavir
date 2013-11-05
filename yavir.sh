@@ -5,6 +5,7 @@
 
 ### Install script ###
 
+
 # If .vim || .vimrc exist -> backup those!
 if [ -d ~/.vim ]
     then
@@ -31,6 +32,7 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/Xifax/yavir.git
   exit
 }
 
+
 # Symlink vimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 
@@ -40,17 +42,28 @@ git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git \
     ~/.fonts/ubuntu-mono-powerline-ttf;
 # Powerline-patched Inconsolata
 wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
-https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
-Inconsolata-dz-Powerline.otf;
+    https://gist.github.com/raw/1595572/51bdd743cc1cc551c49457fe1503061b9404183f/\
+    Inconsolata-dz-Powerline.otf;
 # Other powerline fonts
 git clone https://github.com/Lokaltog/powerline-fonts.git \
     ~/.fonts/powerline-fonts
+# Pragmata fonts
+wget -O ~/.fonts/PragmataPro/PragmataPro-B.ttf \
+    https://dl.dropboxusercontent.com/u/4528902/Fonts/PragmataPro/PragmataPro-B.ttf
+wget -O ~/.fonts/PragmataPro/PragmataPro-I.ttf \
+    https://dl.dropboxusercontent.com/u/4528902/Fonts/PragmataPro/PragmataPro-I.ttf
+wget -O ~/.fonts/PragmataPro/PragmataPro-Z.ttf \
+    https://dl.dropboxusercontent.com/u/4528902/Fonts/PragmataPro/PragmataPro-Z.ttf
+wget -O ~/.fonts/PragmataPro/PragmataPro.ttf \
+    https://dl.dropboxusercontent.com/u/4528902/Fonts/PragmataPro/PragmataPro.ttf
+
 # Update font cache
 fc-cache -vf
 
 
-# Exuberant tags?
-# TODO: at least notify user to install these!
+# Exuberant ctags
+sudo pacman -S ctags
+
 
 # Launch vim!
 vim
