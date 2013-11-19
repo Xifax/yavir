@@ -48,6 +48,7 @@ wget -O ~/.fonts/Inconsolata-dz-Powerline.otf \
 git clone https://github.com/Lokaltog/powerline-fonts.git \
     ~/.fonts/powerline-fonts
 # Pragmata fonts
+mkdir ~/.fonts/PragmataPro
 wget -O ~/.fonts/PragmataPro/PragmataPro-B.ttf \
     https://dl.dropboxusercontent.com/u/4528902/Fonts/PragmataPro/PragmataPro-B.ttf
 wget -O ~/.fonts/PragmataPro/PragmataPro-I.ttf \
