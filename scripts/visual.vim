@@ -13,7 +13,7 @@ if has("gui_running")
 
     "" Personal favorites:
     " One of the best
-    set guifont=PragmataPro\ 16
+    set guifont=PragmataPro\ 14
 
     """ Wonderful alternatives """
 

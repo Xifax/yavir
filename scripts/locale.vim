@@ -11,11 +11,10 @@ highlight lCursor guifg=NONE guibg=Orange
 " Ctrl + l instead of Ctrl + ^ to change current locale
 inoremap <C-L> <C-^>
 " Toggle spellcheck on/off
-" TODO: fix it!
-" TODO: disable spellcheck by default
 map <silent> <leader>ns :setlocal spell!<CR>
 " Spelling correction (ёжЪ компатиблЪ)
-:setlocal spell spelllang=ru_yo,en_us
+":setlocal spell spelllang=ru_yo,en_us
+map <F7> :setlocal spell! spelllang=ru_yo,en_us<CR>
 set nospell
 
 "}}}
