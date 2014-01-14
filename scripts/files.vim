@@ -6,8 +6,12 @@
 
     " Pretty wrapping for tex, txt, md [todo: update]
     "au FileType markdown set tw=79 fo=cqt wm=0
-    au FileType markdown, tex, txt setlocal tw=79 fo=aw2tq
-    au FileType markwodn, tex, txt set wrap
+    au FileType markdown setlocal tw=79 fo=aw2tq
+    au FileType tex setlocal tw=79 fo=aw2tq
+    au FileType txt setlocal tw=79 fo=aw2tq
+    au FileType markdown set wrap
+    au FileType tex set wrap
+    au FileType txt set wrap
 
     " Preview colors for the following file types
     let g:colorv_preview_ftype='css,html,javascript,scss,sass,styl'
