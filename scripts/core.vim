@@ -33,4 +33,11 @@ set backupdir=~/.vim/backup
 set clipboard+=unnamed      " yanks go on clipboard
 set timeoutlen=350          " time to wait for a command after leader
 
+" use zsh shell, even if fish shell is active
+if &shell =~# 'fish$'
+    set shell=zsh
+endif
+
+set shellcmdflag=-ci        " load zshrc
+
 "}}}
