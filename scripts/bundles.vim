@@ -105,7 +105,7 @@
         Bundle 'thinca/vim-quickrun'
         " HTML {{{
             Bundle 'mattn/emmet-vim'
-            Bundle 'briangershon/html5.vim'
+            Bundle 'othree/html5.vim'
             Bundle 'gregsexton/MatchTag'
             Bundle 'tpope/vim-ragtag'
             Bundle 'gcmt/breeze.vim'
