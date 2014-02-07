@@ -41,13 +41,13 @@
     nnoremap <F5> :GundoToggle<CR>
 
     " Lusty juggler
-    nnoremap <silent> <leader>z :LustyJuggler<CR>
-    nnoremap <silent> <C-a> :LustyBufferExplorer<CR>
+    nnoremap <silent> <leader>q :LustyJuggler<CR>
+    nnoremap <silent> <leader>g :LustyBufferExplorer<CR>
     nnoremap <silent> <leader>sb :LustyBufferGrep<CR>
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp
-    "nmap <C-M> :CtrlPMRU<CR>
+    nmap <C-M> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
     " search line in all buffers
@@ -142,8 +142,20 @@
     set viminfo^=%
 
     " EasyMotion
-    " NB: comment out in case of conflict with other plugins!
     let g:EasyMotion_leader_key = '<Leader>'
+    nmap s <Plug>(easymotion-s2)
+    nmap t <Plug>(easymotion-t2)
+
+    map  / <Plug>(easymotion-sn)
+    omap / <Plug>(easymotion-tn)
+    map  n <Plug>(easymotion-next)
+    map  N <Plug>(easymotion-prev)
+
+    map ll <Plug>(easymotion-lineforward)
+    map jj <Plug>(easymotion-j)
+    map kk <Plug>(easymotion-k)
+    map hh <Plug>(easymotion-linebackward)
+    let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
     " Breeze: EasyMotion for html
     map <leader>m :BreezeMatchTag<CR>

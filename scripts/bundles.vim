@@ -7,7 +7,7 @@
         " Title screen
         Bundle 'mhinz/vim-startify'
         " Improved text objects"
-        Bundle 'mhinz/TextObjectify'
+        Bundle 'paradigm/TextObjectify'
         " github interaction
         Bundle 'tpope/vim-fugitive'
         " tig for vim
@@ -28,6 +28,8 @@
         Bundle 'sickill/vim-pasta'
         " automatic repeater (not that one)
         Bundle 'repeat.vim'
+        " Repeat specific plugins
+        Bundle 'tpope/vim-repeat'
         " graphical undo tree
         Bundle 'Gundo'
         " New version of neocomplcache
