@@ -68,6 +68,7 @@
         Bundle 'Tagbar'
         " Shell inside
         Bundle 'rosenfeld/conque-term'
+        Bundle 'Shougo/vimshell.vim'
         " Tmux client
         Bundle 'kikijump/tslime.vim'
         " [BUG] Unicode symbols autoconversion
