@@ -18,6 +18,8 @@
         Bundle 'amdt/vim-niji'
         " vim-script lib
         Bundle 'L9'
+        " Relative line numbering
+        Bundle 'myusuf3/numbers.vim'
         " auto-surround
         Bundle 'surround.vim'
         " yank and paste
@@ -103,6 +105,28 @@
             Bundle 'xoria256.vim'
         "}}}
     "}}}
+    " Files & buffers {{{
+        " Search in files
+        Bundle 'mileszs/ack.vim'
+        " File tree
+        Bundle 'The-NERD-tree'
+        " Nerd tree tabs
+        Bundle 'jistr/vim-nerdtree-tabs'
+        " Most recent files (and much more!)
+        Bundle 'kien/ctrlp.vim'
+        " Juggle buffers
+        Bundle 'LustyJuggler'
+        " Juggle folders, files (and buffers too)
+        Bundle 'LustyExplorer'
+        " Search everything!
+        "Bundle 'FuzzyFiner'
+        " Async lib
+        Bundle 'Shougo/vimproc.vim'
+        " Unite everything
+        Bundle 'Shougo/unite.vim'
+        " File explorer
+        Bundle 'Shougo/vimfiler'
+    " }}}
     " Languages & frameworks {{{
         " Language agnostic
         Bundle 'thinca/vim-quickrun'
@@ -125,11 +149,13 @@
         "}}}
         " PHP {{{
             Bundle '2072/PHP-Indenting-for-VIm'
-            Bundle 'vim-php/phptags'
+            "Bundle 'vim-php/phptags'
+            " Php autocomplete
+            Bundle 'm2mdas/phpcomplete-extended'
             "Bundle 'php.vim'
             "Bundle 'paulyg/Vim-PHP-Stuff'
             "Bundle 'laurentb/vim-cute-php'
-            "Bundle 'spf13/PIV'
+            Bundle 'spf13/PIV'
             "Bundle 'phpcomplete.vim'
             "Bundle 'qbbr/vim-symfony'
             "Bundle 'travisj/php-xdebug-vim'
@@ -176,7 +202,7 @@
     " Projects and tags {{{
         " Automatic tags generation {{{
             Bundle 'xolox/vim-misc'
-            Bundle 'xolox/vim-easytags'
+            "Bundle 'xolox/vim-easytags'
             Bundle 'ctags.vim'
         "}}}
         " Shell wrapper
@@ -186,26 +212,6 @@
         "Bundle 'vimprj'
         " Background indexer
         "Bundle 'indexer.tag.gz'
-    " }}}
-    " Files & buffers {{{
-        " Search in files
-        Bundle 'mileszs/ack.vim'
-        " File tree
-        Bundle 'The-NERD-tree'
-        " Nerd tree tabs
-        Bundle 'jistr/vim-nerdtree-tabs'
-        " Most recent files (and much more!)
-        Bundle 'kien/ctrlp.vim'
-        " Juggle buffers
-        Bundle 'LustyJuggler'
-        " Juggle folders, files (and buffers too)
-        Bundle 'LustyExplorer'
-        " Search everything!
-        "Bundle 'FuzzyFiner'
-        " Unite everything
-        Bundle 'Shougo/unite.vim'
-        " File explorer
-        Bundle 'Shougo/vimfiler'
     " }}}
     " Motions & text objects {{{
         " Navigate file easily
