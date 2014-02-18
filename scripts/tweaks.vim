@@ -24,8 +24,11 @@
         \ }
 
     " Powerline
-    let g:Powerline_symbols = 'fancy'           " requires patched fonts!
-    call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+    "let g:Powerline_symbols = 'fancy'           " requires patched fonts!
+    "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+
+    " Airline
+    let g:airline_powerline_fonts = 1
 
     " VimClojure
     let vimclojure#HighlightBuiltins = 1

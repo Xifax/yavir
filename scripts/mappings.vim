@@ -47,11 +47,13 @@
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp
-    nmap <C-M> :CtrlPMRU<CR>
+    "nmap <C-M> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
     " search line in all buffers
     nmap ,l :CtrlPLine<CR>
+    " search buffers
+    nmap <leader>g :CtrlPBuffer<CR>
 
     " NERDTree
     nnoremap <silent><Leader>nt :NERDTreeToggle<CR>

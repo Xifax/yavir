@@ -35,9 +35,9 @@
         " graphical undo tree
         Bundle 'Gundo'
         " New version of neocomplcache
-        Bundle 'Shougo/neocomplete.vim'
+        "Bundle 'Shougo/neocomplete.vim'
         " Alternative completion system (the fastest one?) [good for python]
-        "Bundle 'Valloric/YouCompleteMe'
+        Bundle 'Valloric/YouCompleteMe'
         " [UNUSED] version control interaction (svn, git and hg)
         "Bundle 'vcscommand.vim'
         " automatic commenter
@@ -45,7 +45,11 @@
         " semi-universal syntax checker
         Bundle 'scrooloose/syntastic'
         " majestic status line
-        Bundle 'Lokaltog/vim-powerline'
+        "Bundle 'Lokaltog/vim-powerline'
+        " bufferline
+        "Bundle 'bling/vim-bufferline'
+        " and another one
+        Bundle 'bling/vim-airline'
         " Zoom main window
         Bundle 'ZoomWin'
         " Tiled window management (actually, not so useful)
@@ -102,6 +106,7 @@
             Bundle 'tpope/vim-vividchalk'
             Bundle 'daylerees/colour-schemes'
             Bundle 'larssmit/vim-getafe'
+            Bundle 'zenorocha/dracula-theme'
             Bundle 'xoria256.vim'
         "}}}
     "}}}
@@ -114,10 +119,12 @@
         Bundle 'jistr/vim-nerdtree-tabs'
         " Most recent files (and much more!)
         Bundle 'kien/ctrlp.vim'
+        " Buffer switching
+        "Bundle 'fholgado/minibufexpl.vim'
         " Juggle buffers
         Bundle 'LustyJuggler'
         " Juggle folders, files (and buffers too)
-        Bundle 'LustyExplorer'
+        "Bundle 'LustyExplorer'
         " Search everything!
         "Bundle 'FuzzyFiner'
         " Async lib
@@ -155,7 +162,7 @@
             "Bundle 'php.vim'
             "Bundle 'paulyg/Vim-PHP-Stuff'
             "Bundle 'laurentb/vim-cute-php'
-            Bundle 'spf13/PIV'
+            "Bundle 'spf13/PIV'
             "Bundle 'phpcomplete.vim'
             "Bundle 'qbbr/vim-symfony'
             "Bundle 'travisj/php-xdebug-vim'
@@ -163,7 +170,7 @@
         "}}}
         " Python {{{
             Bundle 'python.vim'
-            Bundle 'klen/python-mode'
+            "Bundle 'klen/python-mode'
             Bundle 'ehamberg/vim-cute-python'
             "Bundle 'davidhalter/jedi-vim'
             "Bundle 'Pydiction'
