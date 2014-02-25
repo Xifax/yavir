@@ -23,9 +23,17 @@
         \ 'file': '\.exe$\|\.so$\|\.dll$|\.swp$',
         \ }
 
-    " Powerline
-    "let g:Powerline_symbols = 'fancy'           " requires patched fonts!
-    "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+    " The Silver Searcher
+    if executable('ag')
+        " Use ag over grep
+        set grepprg=ag\ --nogroup\ --nocolor
+
+        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+        " ag is fast enough that CtrlP doesn't need to cache
+        let g:ctrlp_use_caching = 0
+    endif
 
     " Airline
     let g:airline_powerline_fonts = 1
@@ -40,5 +48,11 @@
     " Jedi (python completion)"
     let g:jedi#popup_select_first = 0
     let g:jedi#popup_on_dot = 0
+
+    " Php complete composer command
+    "let g:phpcomplete_index_composer_command="composer "
+
+    " JS libs
+    let g:used_javascript_libs = 'angularjs,jquery'
 
 " }}}

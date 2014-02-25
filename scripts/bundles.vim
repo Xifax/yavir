@@ -12,8 +12,6 @@
         Bundle 'tpope/vim-fugitive'
         " tig for vim
         Bundle 'gregsexton/gitv'
-        " Github issues [does not work as it should]
-        "Bundle 'mklabs/vim-issues'
         " colorful parenthesis
         Bundle 'amdt/vim-niji'
         " vim-script lib
@@ -22,10 +20,8 @@
         Bundle 'myusuf3/numbers.vim'
         " auto-surround
         Bundle 'surround.vim'
-        " yank and paste
-        Bundle 'YankRing.vim'
         " light-weight implementation of EMACS kill-ring
-        "Bundle 'maxbrunsfeld/vim-yankstack'
+        Bundle 'maxbrunsfeld/vim-yankstack'
         " Context aware pasting (indentation)
         Bundle 'sickill/vim-pasta'
         " automatic repeater (not that one)
@@ -38,32 +34,22 @@
         "Bundle 'Shougo/neocomplete.vim'
         " Alternative completion system (the fastest one?) [good for python]
         Bundle 'Valloric/YouCompleteMe'
-        " [UNUSED] version control interaction (svn, git and hg)
-        "Bundle 'vcscommand.vim'
         " automatic commenter
         Bundle 'The-NERD-Commenter'
         " semi-universal syntax checker
         Bundle 'scrooloose/syntastic'
-        " majestic status line
-        "Bundle 'Lokaltog/vim-powerline'
-        " bufferline
-        "Bundle 'bling/vim-bufferline'
-        " and another one
+        " Powerline alternative
         Bundle 'bling/vim-airline'
         " Zoom main window
         Bundle 'ZoomWin'
-        " Tiled window management (actually, not so useful)
-        "Bundle 'spolu/dwm.vim'
         " Additional search information
         Bundle 'IndexedSearch'
         "Bundle 'CSApprox'
         Bundle 'http://github.com/gmarik/vim-visual-star-search.git'
         " Color palette
         Bundle 'Rykka/colorv.vim'
-        " Indents visualised {{{
-            Bundle 'Indent-Guides'
-            "Bundle 'Yggdroot/indentLine'
-        "}}}
+        " Indents visualised
+        Bundle 'Indent-Guides'
         " Align tabulation and stuff
         Bundle 'Tabular'
         " displaying signs for version control, errors and fixes
@@ -75,15 +61,8 @@
         " Shell inside
         Bundle 'rosenfeld/conque-term'
         Bundle 'Shougo/vimshell.vim'
-        " Tmux client
-        Bundle 'kikijump/tslime.vim'
-        " [BUG] Unicode symbols autoconversion
-        "Bundle 'UniCycle'
         " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
-        Bundle 'unimpaired.vim'
-        " Project rooter
-        "Bundle 'dbakker/vim-projectroot'
-        "Bundle 'airblade/vim-rooter'
+        "Bundle 'unimpaired.vim'
     " }}}
     " Colorschemes {{{
         " Probably the best colorschemes ever {{{
@@ -112,21 +91,16 @@
     "}}}
     " Files & buffers {{{
         " Search in files
-        Bundle 'mileszs/ack.vim'
+        "Bundle 'mileszs/ack.vim'
+        Bundle 'rking/ag.vim'
         " File tree
         Bundle 'The-NERD-tree'
         " Nerd tree tabs
         Bundle 'jistr/vim-nerdtree-tabs'
         " Most recent files (and much more!)
         Bundle 'kien/ctrlp.vim'
-        " Buffer switching
-        "Bundle 'fholgado/minibufexpl.vim'
         " Juggle buffers
         Bundle 'LustyJuggler'
-        " Juggle folders, files (and buffers too)
-        "Bundle 'LustyExplorer'
-        " Search everything!
-        "Bundle 'FuzzyFiner'
         " Async lib
         Bundle 'Shougo/vimproc.vim'
         " Unite everything
@@ -147,12 +121,15 @@
         " CSS and preprocessors {{{
             Bundle 'wavded/vim-stylus'
             Bundle 'groenewege/vim-less'
-            "Bundle 'skammer/vim-css-color'
+            Bundle 'hail2u/vim-css3-syntax'
+            Bundle 'ap/vim-css-color'
         "}}
         " JS and preprocessors {{{
             Bundle 'jelera/vim-javascript-syntax'
+            Bundle 'marijnh/tern_for_vim'
+            Bundle 'othree/javascript-libraries-syntax.vim'
             Bundle 'kchmck/vim-coffee-script'
-            "Bundle 'pangloss/vim-javascript'
+            Bundle 'vim-scripts/JavaScript-Indent'
         "}}}
         " PHP {{{
             Bundle '2072/PHP-Indenting-for-VIm'
@@ -161,7 +138,7 @@
             Bundle 'm2mdas/phpcomplete-extended'
             "Bundle 'php.vim'
             "Bundle 'paulyg/Vim-PHP-Stuff'
-            "Bundle 'laurentb/vim-cute-php'
+            Bundle 'laurentb/vim-cute-php'
             "Bundle 'spf13/PIV'
             "Bundle 'phpcomplete.vim'
             "Bundle 'qbbr/vim-symfony'
@@ -176,14 +153,14 @@
             "Bundle 'Pydiction'
         "}}}
         " Actionscript {{{
-            Bundle 'Flex-4'
+            "Bundle 'Flex-4'
         "}}}
         " LaTeX {{{
             Bundle 'LaTeX-Box'
         "}}}
         " Haskell {{{
-            Bundle 'haskell.vim'
-            Bundle 'frerich/unicode-haskell'
+            "Bundle 'haskell.vim'
+            "Bundle 'frerich/unicode-haskell'
         "}}}
         " Clojure {{{
             Bundle 'VimClojure'
@@ -198,7 +175,7 @@
             Bundle 'Rykka/riv.vim'
         "}}}
         " Databases and SQL {{{
-            Bundle 'SQLComplete.vim'
+            "Bundle 'SQLComplete.vim'
             "Bundle 'dbext.vim'
             "Bundle 'mattn/vdbi-vim'
             "Bundle 'mattn/webapi-vim'
@@ -209,16 +186,10 @@
     " Projects and tags {{{
         " Automatic tags generation {{{
             Bundle 'xolox/vim-misc'
-            "Bundle 'xolox/vim-easytags'
             Bundle 'ctags.vim'
         "}}}
         " Shell wrapper
         Bundle 'sjl/clam.vim'
-        "!Bundle 'DfrankUtil'
-        " Project management
-        "Bundle 'vimprj'
-        " Background indexer
-        "Bundle 'indexer.tag.gz'
     " }}}
     " Motions & text objects {{{
         " Navigate file easily
@@ -235,14 +206,6 @@
         Bundle 'FencView.vim'
     "}}}
     " Unused {{{
-        " two-panel file manager
-        "Bundle 'vimcommander'
-        "Bundle 'rails.vim'
-        "Bundle 'vim-ipython'
-        "Bundle 'VimPdb'
-        "Bundle 'Bundle DBGp-Remote-Debugger-Interface'
-        " ctag your source code!
-        "Bundle 'taglist.vim'
-    " }}}
+    "}}}
 
 " }}}

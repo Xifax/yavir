@@ -30,9 +30,6 @@
     " In case we forgot to sudo (will ask for password, obviously)
     cmap w!! w !sudo tee % >/dev/null
 
-    " Shell in gVim
-    "cmap !! ConqueTermVSplit
-
     " Decrement|increment
     nnoremap + <C-a>
     nnoremap - <C-x>
@@ -41,19 +38,17 @@
     nnoremap <F5> :GundoToggle<CR>
 
     " Lusty juggler
-    nnoremap <silent> <leader>q :LustyJuggler<CR>
-    nnoremap <silent> <leader>g :LustyBufferExplorer<CR>
-    nnoremap <silent> <leader>sb :LustyBufferGrep<CR>
+    nnoremap <A-x> :LustyJuggler<CR>
     let g:LustyJugglerShowKeys=1            " Show numbers for Lusty Buffers
 
     " Ctrlp
-    "nmap <C-M> :CtrlPMRU<CR>
+    "nmap <C-m> :CtrlPMRU<CR>
     " search tags in current buffer
     nmap ,a :CtrlPBufTag<CR>
     " search line in all buffers
     nmap ,l :CtrlPLine<CR>
     " search buffers
-    nmap <leader>g :CtrlPBuffer<CR>
+    nmap <A-p> :CtrlPBuffer<CR>
 
     " NERDTree
     nnoremap <silent><Leader>nt :NERDTreeToggle<CR>
@@ -76,32 +71,18 @@
 
     " Tagbar
     nmap <silent><leader>et :TagbarToggle<CR>
-    "let generate_tags=1
 
-    " Yankring
-    nnoremap <silent> <leader>r :YRShow<CR>
-
-    " Fuzzyfinder
-    "nnoremap <silent> <leader>gt :FufTag<CR>
-    "nnoremap <silent> <leader>gl :FufLine<CR>
+    " Yankstack
+    nnoremap <silent><leader>x :Yanks<CR>
 
     " Quick compile
     map <F4> :make<CR><C-w><Up>
-
-    " Quickrun
-    "let g:quickrun_config = {}
-    "let g:quickrun_config.php = {'command' : 'php', 'cmdopt' : '-r'}
-
-    " Sane regexes (optional)
-    "nnoremap / /\v
-    "vnoremap / /\v
 
     " Self-expanatory
     noremap <F1> <Esc>
 
     " Switch buffers quickly
-    " NB: in case of double leader, some commands will await slight delay
-    noremap <Leader><Leader> <C-^>
+    noremap <C-x> <C-^>
 
     " Better command line editing
     cnoremap <C-j> <t_kd>
@@ -119,9 +100,6 @@
     " Remove trailing whitespaces on save
     autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 
-    " Retab on save [TODO: debug?]
-    "autocmd BufWritePre * :call retab
-
     " Show available encodings dialog
     nnoremap <silent><leader>me :FencView<CR>
 
@@ -132,7 +110,7 @@
     map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
     " Remove the Windows ^M - when the encodings gets messed up
-    noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+    noremap <Leader>rm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
     " Return to last edit position when opening files
     autocmd BufReadPost *
@@ -176,15 +154,36 @@
     map <silent><leader>y "+y
     nnoremap <silent><leader>p "+p
 
-    " Paste from system buffer when in insert mode
-    inoremap <C-p> <C-r>*
-
-    " Zen coding (emmet)
-    "let g:user_emmet_leader_key = '<C-e>'
+    " Emmet (formely Zen coding)
     let g:user_emmet_expandabbr_key = '<C-e>'
 
-    " Omnicomplcache tab-completion
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+    " Open new lines without going into insert mode
+    nnoremap <leader>o o<esc>
+    nnoremap <leader>O O<esc>
+
+    " next/previous items in quickfix list
+    nnoremap <S-n> :cnext<CR>
+    nnoremap <S-p> :cprevious<CR>
+
+    " jump between folds
+    nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
+    nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
+    function! NextClosedFold(dir)
+        let cmd = 'norm!z' . a:dir
+        let view = winsaveview()
+        let [l0, l, open] = [0, view.lnum, 1]
+        while l != l0 && open
+            exe cmd
+            let [l0, l] = [l, line('.')]
+            let open = foldclosed(l) < 0
+        endwhile
+        if open
+            call winrestview(view)
+        endif
+    endfunction
+
+    " Silver search
+    nnoremap \ :Ag<SPACE>
+    "nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " }}}
