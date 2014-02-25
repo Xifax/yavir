@@ -20,8 +20,8 @@
         Bundle 'myusuf3/numbers.vim'
         " auto-surround
         Bundle 'surround.vim'
-        " light-weight implementation of EMACS kill-ring
-        "Bundle 'maxbrunsfeld/vim-yankstack'
+        " Killring
+        Bundle 'vim-scripts/YankRing.vim'
         " Context aware pasting (indentation)
         Bundle 'sickill/vim-pasta'
         " automatic repeater (not that one)
@@ -107,6 +107,8 @@
         Bundle 'Shougo/unite.vim'
         " File explorer
         Bundle 'Shougo/vimfiler'
+        " Project rooter
+        Bundle 'airblade/vim-rooter'
     " }}}
     " Languages & frameworks {{{
         " Language agnostic
