@@ -10,8 +10,8 @@
         Bundle 'paradigm/TextObjectify'
         " github interaction
         Bundle 'tpope/vim-fugitive'
-        " tig for vim
-        Bundle 'gregsexton/gitv'
+        " git commit browser
+        Bundle 'int3/vim-extradite'
         " colorful parenthesis
         Bundle 'amdt/vim-niji'
         " vim-script lib
@@ -40,11 +40,8 @@
         Bundle 'scrooloose/syntastic'
         " Powerline alternative
         Bundle 'bling/vim-airline'
-        " Zoom main window
-        Bundle 'ZoomWin'
         " Additional search information
         Bundle 'IndexedSearch'
-        "Bundle 'CSApprox'
         Bundle 'http://github.com/gmarik/vim-visual-star-search.git'
         " Color palette
         Bundle 'Rykka/colorv.vim'
@@ -61,8 +58,6 @@
         " Shell inside
         Bundle 'rosenfeld/conque-term'
         Bundle 'Shougo/vimshell.vim'
-        " Handy brackets mappings (see http://vimcasts.org/episodes/bubbling-text/)
-        "Bundle 'unimpaired.vim'
     " }}}
     " Colorschemes {{{
         " Probably the best colorschemes ever {{{
@@ -137,7 +132,7 @@
             Bundle '2072/PHP-Indenting-for-VIm'
             "Bundle 'vim-php/phptags'
             " Php autocomplete
-            Bundle 'm2mdas/phpcomplete-extended'
+            "Bundle 'm2mdas/phpcomplete-extended'
             "Bundle 'php.vim'
             "Bundle 'paulyg/Vim-PHP-Stuff'
             Bundle 'laurentb/vim-cute-php'
