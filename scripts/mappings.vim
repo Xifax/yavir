@@ -162,8 +162,8 @@
     nnoremap <leader>O O<esc>
 
     " next/previous items in quickfix list
-    nnoremap <S-n> :cnext<CR>
-    nnoremap <S-p> :cprevious<CR>
+    nnoremap <A-n> :cnext<CR>
+    nnoremap <A-b> :cprevious<CR>
 
     " jump between folds
     nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
