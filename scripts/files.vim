@@ -1,8 +1,10 @@
 " File type dependent {{{
 
-    " Force actionscript and flex types
+    " Force additional file types :
+    " actionscript, flex, enaml
     au BufRead *.as set filetype=actionscript
     au BufRead *.mxml set filetype=mxml
+    au BufNewFile,BufRead,BufEnter *.enaml setfiletype enaml
 
     " Pretty wrapping for tex, txt, md [todo: update]
     "au FileType markdown set tw=79 fo=cqt wm=0

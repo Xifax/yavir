@@ -31,9 +31,9 @@
         " graphical undo tree
         Bundle 'Gundo'
         " New version of neocomplcache
-        "Bundle 'Shougo/neocomplete.vim'
+        Bundle 'Shougo/neocomplete.vim'
         " Alternative completion system (the fastest one?) [good for python]
-        Bundle 'Valloric/YouCompleteMe'
+        "Bundle 'Valloric/YouCompleteMe'
         " automatic commenter
         Bundle 'The-NERD-Commenter'
         " semi-universal syntax checker
@@ -143,7 +143,9 @@
             "Bundle 'joonty/vim-phpqa'
         "}}}
         " Python {{{
-            Bundle 'python.vim'
+            "Bundle 'python.vim'
+            Bundle 'hdima/python-syntax'
+            "Bundle 'me-vlad/python-syntax.vim'
             "Bundle 'klen/python-mode'
             Bundle 'ehamberg/vim-cute-python'
             "Bundle 'davidhalter/jedi-vim'
