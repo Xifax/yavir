@@ -56,7 +56,7 @@
         " Tags, tags, tags!
         Bundle 'Tagbar'
         " Shell inside
-        Bundle 'rosenfeld/conque-term'
+        "Bundle 'rosenfeld/conque-term'
         Bundle 'Shougo/vimshell.vim'
     " }}}
     " Colorschemes {{{
@@ -145,6 +145,7 @@
         " Python {{{
             "Bundle 'python.vim'
             Bundle 'hdima/python-syntax'
+            Bundle 'nucleic/enaml', {'rtp': 'tools/vim/'}
             "Bundle 'me-vlad/python-syntax.vim'
             "Bundle 'klen/python-mode'
             Bundle 'ehamberg/vim-cute-python'
