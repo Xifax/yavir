@@ -24,8 +24,6 @@
         Bundle 'vim-scripts/YankRing.vim'
         " Context aware pasting (indentation)
         Bundle 'sickill/vim-pasta'
-        " automatic repeater (not that one)
-        Bundle 'repeat.vim'
         " Repeat specific plugins
         Bundle 'tpope/vim-repeat'
         " graphical undo tree

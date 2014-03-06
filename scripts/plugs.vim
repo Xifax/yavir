@@ -10,11 +10,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'paradigm/TextObjectify'
     " github interaction
     Plug 'tpope/vim-fugitive'
-    " git commit browser
-    Plug 'int3/vim-extradite'
     " colorful parenthesis
     Plug 'amdt/vim-niji'
-    " vim-script lib
+    " vim-script lib (is it really required? TODO: remove if not)
     Plug 'L9'
     " Relative line numbering
     Plug 'myusuf3/numbers.vim'
@@ -24,16 +22,14 @@ call plug#begin('~/.vim/plugged')
     "Plug 'vim-scripts/YankRing.vim', {'on': 'YRShow'}
     " Context aware pasting (indentation)
     "Plug 'sickill/vim-pasta'
-    " automatic repeater (not that one)
-    Plug 'repeat.vim'
     " Repeat specific plugins
     Plug 'tpope/vim-repeat'
     " graphical undo tree
-    Plug 'Gundo'
+    Plug 'Gundo', {'on': 'GundoToggle'}
     " New version of neocomplcache
     Plug 'Shougo/neocomplete.vim'
-    " automatic commenter
-    Plug 'The-NERD-Commenter'
+    " automatic commenter (works great for mixed code and embedded file types)
+    Plug 'tomtom/tcomment_vim'
     " semi-universal syntax checker
     Plug 'scrooloose/syntastic'
     " Powerline alternative
@@ -51,7 +47,7 @@ call plug#begin('~/.vim/plugged')
     " Syntax-aware auto closing quotes, brackets, etc
     Plug 'Raimondi/delimitMate'
     " Tags, tags, tags!
-    Plug 'Tagbar', {'on': 'Tagbar'}
+    Plug 'Tagbar', {'on': 'TagbarToggle'}
     " Shell inside
     Plug 'Shougo/vimshell.vim', {'on': 'VimShell'}
 " }}}
@@ -105,7 +101,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'mattn/emmet-vim'
         Plug 'othree/html5.vim'
         Plug 'gregsexton/MatchTag'
-        Plug 'tpope/vim-ragtag'
+        "Plug 'tpope/vim-ragtag'
         Plug 'gcmt/breeze.vim'
     "}}}
     " CSS and preprocessors {{{
@@ -139,9 +135,9 @@ call plug#begin('~/.vim/plugged')
         "Plug 'python.vim'
         Plug 'hdima/python-syntax'
         Plug 'nucleic/enaml', {'rtp': 'tools/vim/'}
+        Plug 'ehamberg/vim-cute-python'
         "Plug 'me-vlad/python-syntax.vim'
         "Plug 'klen/python-mode'
-        Plug 'ehamberg/vim-cute-python'
         "Plug 'davidhalter/jedi-vim'
         "Plug 'Pydiction'
     "}}}
@@ -149,15 +145,15 @@ call plug#begin('~/.vim/plugged')
         "Plug 'Flex-4'
     "}}}
     " LaTeX {{{
-        Plug 'LaTeX-Box'
+        "Plug 'LaTeX-Box'
     "}}}
     " Haskell {{{
         "Plug 'haskell.vim'
         "Plug 'frerich/unicode-haskell'
     "}}}
     " Clojure {{{
-        Plug 'VimClojure'
-        Plug 'jpalardy/vim-slime'
+        "Plug 'VimClojure'
+        "Plug 'jpalardy/vim-slime'
     "}}}
     " Scala {{{
         "Plug 'vim-scala'
@@ -181,8 +177,6 @@ call plug#begin('~/.vim/plugged')
         Plug 'xolox/vim-misc'
         Plug 'ctags.vim'
     "}}}
-    " Shell wrapper
-    Plug 'sjl/clam.vim'
 " }}}
 " Motions & text objects {{{
     " Navigate file easily

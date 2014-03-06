@@ -73,7 +73,7 @@
     nmap <silent><leader>et :TagbarToggle<CR>
 
     " Yankring
-    nnoremap <silent><leader>x :YRShow<CR>
+    "nnoremap <silent><leader>x :YRShow<CR>
 
     " Quick compile
     map <F4> :make<CR><C-w><Up>
