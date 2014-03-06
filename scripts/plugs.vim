@@ -116,6 +116,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'othree/javascript-libraries-syntax.vim'
         Plug 'kchmck/vim-coffee-script'
         Plug 'vim-scripts/JavaScript-Indent'
+        Plug 'tyok/js-mask'
     "}}}
     " PHP {{{
         Plug '2072/PHP-Indenting-for-VIm'
@@ -124,7 +125,7 @@ call plug#begin('~/.vim/plugged')
         "Plug 'm2mdas/phpcomplete-extended'
         "Plug 'php.vim'
         "Plug 'paulyg/Vim-PHP-Stuff'
-        Plug 'laurentb/vim-cute-php'
+        Plug 'xifax/vim-cute-php'
         "Plug 'spf13/PIV'
         "Plug 'phpcomplete.vim'
         "Plug 'qbbr/vim-symfony'
