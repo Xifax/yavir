@@ -1,5 +1,5 @@
 " Bundles {{{
-" This contains Github Vim repos census. Just kidding.
+" This contains bundles installed via Vundle
 
     " NB: no comments allowed on the line with the bundle name!
     " Gonna catch'em all:

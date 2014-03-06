@@ -1,87 +1,93 @@
 " Aesthetics {{{
+
 " Configure how everything looks: colorschemes, fonts, gui, highlights, etc.
 
 " NB: By default, will use terminal colorscheme
 
-" Switching to light version in case of gui
-if has("gui_running")
-    " Eye-candy colorscheme
-    colorscheme badwolf
-    " Some nice alternatives: solarized, darkspectrum, BusyBee
+    " GUI settings {{{
 
-    """ Hark! Fonts ahead! """
+    " Switching to light version in case of gui
+    if has("gui_running")
+        " Eye-candy colorscheme
+        colorscheme hybrid
+        " Some nice alternatives: hybrid, badwolf, solarized, darkspectrum,
+        " BusyBee, gruvbox
 
-    "" Personal favorites:
-    " One of the best
-    set guifont=PragmataPro\ 14
+        " Hark! Fonts ahead! {{{
 
-    """ Wonderful alternatives """
+        "" Personal favorites:
+        " One of the best
+        set guifont=PragmataPro\ 14
 
-    "" Consolas open source clone (some unicode symbols are missing)
-    "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 15
+        "" Consolas open source clone (some unicode symbols are missing)
+        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 15
 
-    "" Unholy union
-    "set guifont=Ricty\ 15
+        "" Unholy union
+        "set guifont=Ricty\ 15
 
-    "" Ubuntu goodness
-    "set guifont=Ubuntu\ Mono\ for\ Powerline\ 16
+        "" Ubuntu goodness
+        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 16
 
-    "" Adobe goodness (very nice!)
-    "set guifont=Source\ Code\ Pro\ for\ Powerline\ 15
+        "" Adobe goodness (very nice!)
+        "set guifont=Source\ Code\ Pro\ for\ Powerline\ 15
 
-    "" Apple goodness
-    " set guifont=Menlo\ for\ Powerline\ 15"
+        "" Apple goodness
+        " set guifont=Menlo\ for\ Powerline\ 15"
 
-    "" Propietary MS goodness (mmm, tasty!)
-    "set guifont=Consolas\ 15
+        "" Propietary MS goodness (mmm, tasty!)
+        "set guifont=Consolas\ 15
 
 
-    """ Other recommended fonts: """
+        """ Other recommended fonts: """
 
-    "" Bistream Vera
-    "" DejaVu Mono, Droid Mono
-    "" Monaco, Mensch
-    "" Nimbus Mono L
-    "" Source Sans Pro
+        "" Bistream Vera
+        "" DejaVu Mono, Droid Mono
+        "" Monaco, Mensch
+        "" Nimbus Mono L
+        "" Source Sans Pro
 
-    " see this repo for powerline fonts:
-    " https://github.com/Lokaltog/powerline-fonts
+        " see this repo for powerline fonts:
+        " https://github.com/Lokaltog/powerline-fonts
 
-    """ End of fonts """
+        " }}}
 
-    " Quickswitch fonts
-    " ...
-endif
+    endif
 
-set wildmenu        " show hint on command input
-set cursorline      " highlight line the cursor is currently on
-set cursorcolumn    " also highlight column
-set number          " always show line numbers
-set showmatch       " show matching parenthesis
-set hlsearch        " highlight search terms
-set incsearch       " show search matches as you type
-set title           " change the terminal's title
-set novisualbell    " don't beep
-set noerrorbells    " please don't beep
-set nowrap          " don't wrap lines
-set laststatus=2    " always show statusline
-syntax on           " do higlight syntax
+    " "}}}
 
-:set guioptions-=m  " remove menu bar
-:set guioptions-=T  " remove toolbar
-:set guioptions-=L  " remove left scrollbar
-:set guioptions-=r  " remove right scrollbar
+    " Main visual options {{{
 
-" Highlight 80st column
-if exists('+colorcolumn')
-    set colorcolumn=80
-else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+    set wildmenu        " show hint on command input
+    set cursorline      " highlight line the cursor is currently on
+    set cursorcolumn    " also highlight column
+    set number          " always show line numbers
+    set showmatch       " show matching parenthesis
+    set hlsearch        " highlight search terms
+    set incsearch       " show search matches as you type
+    set title           " change the terminal's title
+    set novisualbell    " don't beep
+    set noerrorbells    " please don't beep
+    set nowrap          " don't wrap lines
+    set laststatus=2    " always show statusline
+    syntax on           " do higlight syntax
 
-" Custom invisibles
-set list
-set listchars=tab:▸\ ,eol:↵,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
+    :set guioptions-=m  " remove menu bar
+    :set guioptions-=T  " remove toolbar
+    :set guioptions-=L  " remove left scrollbar
+    :set guioptions-=r  " remove right scrollbar
+
+    " Highlight 80st column
+    if exists('+colorcolumn')
+        set colorcolumn=80
+    else
+        au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    endif
+
+    " Custom invisibles
+    set list
+    set listchars=tab:▸\ ,eol:↵,trail:⋅,extends:❯,precedes:❮
+    set showbreak=↪
+
+    "}}}
 
 "}}}

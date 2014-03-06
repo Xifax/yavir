@@ -1,12 +1,11 @@
-# Yet Another VIm Run commands (or 'config', if you would)
+# Yet Another VIm Run commands
 
-Everybody does it! I mean, throws their hand-picked pile of befuddled Vim
-goodness onto the internets. Yes, that is it.
+Because there's not enough vim configs as it is.
 
 ## Intro
 
-What is this!? (something should be written here, I know).
-Also, notate bene.
+My humble attempt at vim modular configuration. Vim-plug and Vundle are
+supported as plugin managers.
 
 ## Installation
 
@@ -21,12 +20,11 @@ You may also just clone repo and symlink vimrc:
     ln -s .vim/vimrc .vimrc
     vim
 
-When launched, it will get Vundle (you should have your *git*), then proceed
-to install all the bundles (edit those, before launching, will ya?).
+When launched, it will install selected plugin manager and specified plugins.
 
 ## Notes
 
-Regarding plugin selection and possible customizations.
+TODO: Regarding plugin selection and possible customizations.
 
 ## Keymappings
 
@@ -39,4 +37,3 @@ from mappings themselves!)
 
 * implement random font|colorscheme switcher
 * implement uninstall command for script (restore backed up .vim|vimrc, etc)
-* ponder wrapping for markdown, text and source code

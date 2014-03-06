@@ -107,7 +107,7 @@
     nnoremap <silent><leader>vf :VimFiler<CR>
 
     " Cd to project root
-    map <silent><Leader>rt <Plug>RooterChangeToRootDirectory
+    map <silent><Leader>rt :Rooter<CR>
 
     " Remove the Windows ^M - when the encodings gets messed up
     noremap <Leader>rm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm

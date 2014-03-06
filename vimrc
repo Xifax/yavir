@@ -16,66 +16,54 @@
     " And remember: loose configs are sinking battleships!
 
     " Author: Artiom Basenko
-    " Updated: 17.07.2013
+    " Updated: 06.03.2014
     " Version: stopped counting long ago
     " OS: preferably Linux
     " Sources: vimbits.com, github.com, vimcasts.org, internets
 " }}}
 " What else to do {{{
-" TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
+    " TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
     " TODO: CamelCaseMotion breaks EasyMotion (sic!)
     " TODO: argtextobj breaks spellcheck (sic!!1)
-    " TODO: tweak quickrun (to run without php tags, etc)
-    " TODO: sources list
     " TODO: add automatic conversion: -- to long dash for txt and tex
 " }}}
 " }}}
 " Configuration {{{
-    " Bundles initialization {{{
-        " Pre-init {{{
+    " Plugin initialization {{{
 
         " be iMproved
         set nocompatible
-        " Required for Vundle shenanigans
-        filetype off
 
-        " Check, if vundle is installed
-        let shouldInit=1
-        let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-        " If not, let's initialize this Vim!
-        if !filereadable(vundle_readme)
-            echo "Installing Vundle.."
-            echo ""
-            silent !mkdir -p ~/.vim/bundle
-            silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-            echo "Creating backup dir..."
-            silent !mkdir -p ~/.vim/backup
-            echo "Creating spell dir..."
-            silent !mkdir -p ~/.vim/spell
-            let shouldInit=0
+        " set plugin manager
+        let pluginManager = 'plug'
+
+        " Init {{{
+        if pluginManager == 'plug'
+            source ~/.vim/scripts/init.plug.vim
+            " Plugs list
+            source ~/.vim/scripts/plugs.vim
+        elseif pluginManager == 'vundle'
+            source ~/.vim/scripts/init.vundle.vim
+            " Bundles list
+            source ~/.vim/scripts/bundles.vim
         endif
-
-        " let's use Vundle instead of pathogen
-        set rtp+=~/.vim/bundle/vundle/
-        call vundle#rc()
-
-        " let Vundle manage Vundle
-        Bundle 'gmarik/vundle'
-        "}}}
-
-        " Bundles list
-        source ~/.vim/scripts/bundles.vim
+        " }}}
 
         " Post-init {{{
         if shouldInit == 0
-            echo "Installing Bundles, please ignore key map error messages!"
+            echo "Installing plugins, please ignore key map error messages!"
             echo ""
-            :BundleInstall
+            if pluginManager == 'plug'
+                :PlugInstall
+            elseif pluginManager == 'vundle'
+                :BundleInstall
+            endif
         endif
 
         " After scripts's been installed/updated/initialized
         filetype plugin indent on
         " }}}
+
     " }}}
     " Configuration scripts {{{
         " Aesthetics
@@ -103,13 +91,13 @@
     " TODO: add mnemonics
         " easymotion: leader + w, leader + b, leader + ge, leader + j
         " command-t: leader + a (tags), ctrl + p (files), ctrl + m (MRU)
-        " lusty juggler: leader + lf (explorer), ctrl + a (buffers), lead + sb
-        " lusty buffer: leader + z
+        " lusty buffer: alt + x
         " ctrl: Ctrl + p
         " tags: leader + et
         " diff: diffthis for each open buffer | diffoff
         " set pwd: leader + cd | :cd %:p:h
-        " yankring: leader + r
+        " change to project root: leader + rt
+        " yankring: leader + x
         " gundo: F5
         " make: F4
         " view: F3
@@ -120,20 +108,18 @@
         " copy/paste from/to clipboard: leader + y, leader + p; ctrl + p (ins)
         " return to command mode: ctrl + [
         " toggle spellcheck: leader + ss
-        " go to tag: leader + gt
-        " go to line: leader + gl
         " split: ss (horizontal), vv (vertical)
         " adjust split size: ctrl + alt + motion (hjkl)
         " close active split: sq
-        " switch buffers: double leader
-        " zoom/unzoom active window: ctrl + w + o
+        " switch buffers: ctrl + x
         " strip endline whitespaces: leader + sw
+        " strip endline ^M: leader + sm
         " unicode char (insert mode): ctrl + v + u____
         " manage encoding: leader + me
         " edit color: leader + ce
         " vimfiler explorer: leader + vf
         " surround: ds( | cs([ | csw(
-        " surround[visual]: s[
+        " surround[visual]: S[
     " }}}
     " Memo {{{
         " Don't switch OS languages, use keymap (ctrl + l)

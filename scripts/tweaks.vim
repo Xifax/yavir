@@ -42,9 +42,6 @@
     let vimclojure#HighlightBuiltins = 1
     let vimclojure#ParenRainbow = 1
 
-    " Slime tmux
-    let g:slime_target = "tmux"
-
     " Jedi (python completion)"
     let g:jedi#popup_select_first = 0
     let g:jedi#popup_on_dot = 0
@@ -54,5 +51,8 @@
 
     " JS libs
     let g:used_javascript_libs = 'angularjs,jquery'
+
+    " Python syntax highlight
+    let python_highlight_all = 1
 
 " }}}
