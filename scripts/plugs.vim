@@ -96,7 +96,7 @@ call plug#begin('~/.vim/plugged')
     " File explorer
     Plug 'Shougo/vimfiler', {'on': 'VimFiler'}
     " Project rooter
-    Plug 'airblade/vim-rooter', {'on': 'Rooter'}
+    Plug 'airblade/vim-rooter'
 " }}}
 " Languages & frameworks {{{
     " Language agnostic

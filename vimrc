@@ -22,7 +22,6 @@
     " Sources: vimbits.com, github.com, vimcasts.org, internets
 " }}}
 " What else to do {{{
-    " TODO: check spellcheck hotkey (also, spellcheck for russian language) ss!
     " TODO: CamelCaseMotion breaks EasyMotion (sic!)
     " TODO: argtextobj breaks spellcheck (sic!!1)
     " TODO: add automatic conversion: -- to long dash for txt and tex
@@ -107,7 +106,7 @@
         " nerdtree: leader + nt, leader + sf (show current file), cd
         " copy/paste from/to clipboard: leader + y, leader + p; ctrl + p (ins)
         " return to command mode: ctrl + [
-        " toggle spellcheck: leader + ss
+        " toggle spellcheck: F7
         " split: ss (horizontal), vv (vertical)
         " adjust split size: ctrl + alt + motion (hjkl)
         " close active split: sq

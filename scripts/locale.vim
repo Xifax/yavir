@@ -13,7 +13,6 @@ inoremap <C-L> <C-^>
 " Toggle spellcheck on/off
 map <silent> <leader>ns :setlocal spell!<CR>
 " Spelling correction (ёжЪ компатиблЪ)
-":setlocal spell spelllang=ru_yo,en_us
 map <F7> :setlocal spell! spelllang=ru_yo,en_us<CR>
 set nospell
 
