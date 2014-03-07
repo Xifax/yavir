@@ -6,12 +6,29 @@
 
     " GUI settings {{{
 
+    let randomTheme = 1
+
     " Switching to light version in case of gui
     if has("gui_running")
+
+        if randomTheme == 1
+            let themes = ['badwolf', 'hybrid', 'gruvbox', 'darkspectrum',
+                        \ 'molokai', 'smyk', 'BusyBee']
+            " let limit = len(themes) - 1
+            " let theme = pyeval('import random; random.randint(0, ' . limit . ')')
+python << endpython
+import vim
+import random
+limit = int(vim.eval('len(themes) - 1'))
+vim.command('let theme = themes[%s]' % random.randint(0, limit))
+endpython
+            " echomsg theme . ' theme has been set'
+        else
+            let theme = hybrid
+        endif
+
         " Eye-candy colorscheme
-        colorscheme hybrid
-        " Some nice alternatives: hybrid, badwolf, solarized, darkspectrum,
-        " BusyBee, gruvbox
+        exe 'colorscheme ' . theme
 
         " Hark! Fonts ahead! {{{
 

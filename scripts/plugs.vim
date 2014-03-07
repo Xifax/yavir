@@ -106,8 +106,7 @@ call plug#begin('~/.vim/plugged')
     " HTML {{{
         Plug 'mattn/emmet-vim'
         Plug 'othree/html5.vim'
-        Plug 'gregsexton/MatchTag'
-        "Plug 'tpope/vim-ragtag'
+        Plug 'Valloric/MatchTagAlways'
         Plug 'gcmt/breeze.vim'
     "}}}
     " CSS and preprocessors {{{
