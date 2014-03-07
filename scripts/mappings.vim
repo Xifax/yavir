@@ -78,6 +78,9 @@
     " Switch buffers quickly
     noremap <C-x> <C-^>
 
+    " Save current and switch to previous buffer
+    noremap <C-s> :w<CR><C-^>
+
     " Better command line editing
     cnoremap <C-j> <t_kd>
     cnoremap <C-k> <t_ku>
