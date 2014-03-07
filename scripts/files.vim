@@ -22,9 +22,9 @@
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-    "autocmd FileType python setlocal omnifunc=jedi#complete
+    autocmd FileType python setlocal omnifunc=jedi#complete
     "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
     " Code folding

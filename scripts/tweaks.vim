@@ -55,4 +55,13 @@
     " Python syntax highlight
     let python_highlight_all = 1
 
+    " Highlight matching tags
+    let g:mta_filetypes = {
+        \ 'html' : 1,
+        \ 'xhtml' : 1,
+        \ 'xml' : 1,
+        \ 'jinja' : 1,
+        \ 'php' : 1,
+        \}
+
 " }}}
