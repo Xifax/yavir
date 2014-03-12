@@ -24,12 +24,6 @@
     vnoremap <A-j> :m'>+<CR>gv=gv
     vnoremap <A-k> :m-2<CR>gv=gv
 
-    " Clear highlghted search (handy!)
-    nmap <silent> ,/ :nohlsearch<CR>
-
-    " In case we forgot to sudo (will ask for password, obviously)
-    cmap w!! w !sudo tee % >/dev/null
-
     " Decrement|increment
     nnoremap + <C-a>
     nnoremap - <C-x>
@@ -71,9 +65,6 @@
 
     " Tagbar
     nmap <silent><leader>et :TagbarToggle<CR>
-
-    " Yankring
-    "nnoremap <silent><leader>x :YRShow<CR>
 
     " Quick compile
     map <F4> :make<CR><C-w><Up>
@@ -184,6 +175,6 @@
 
     " Silver search
     nnoremap \ :Ag<SPACE>
-    "nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+    nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " }}}

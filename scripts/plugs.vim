@@ -20,6 +20,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'surround.vim'
     " Killring
     "Plug 'vim-scripts/YankRing.vim', {'on': 'YRShow'}
+    " Unix bindings
+    Plug 'tpope/vim-eunuch'
+    " Readline key bindings
+    Plug 'tpope/vim-rsi'
     " Context aware pasting (indentation)
     "Plug 'sickill/vim-pasta'
     " Repeat specific plugins
@@ -47,7 +51,7 @@ call plug#begin('~/.vim/plugged')
     " Syntax-aware auto closing quotes, brackets, etc
     Plug 'Raimondi/delimitMate'
     " Tags, tags, tags!
-    Plug 'Tagbar', {'on': 'TagbarToggle'}
+    Plug 'Tagbar'
     " Shell inside
     Plug 'Shougo/vimshell.vim', {'on': 'VimShell'}
 " }}}
