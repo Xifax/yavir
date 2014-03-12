@@ -24,6 +24,9 @@
     vnoremap <A-j> :m'>+<CR>gv=gv
     vnoremap <A-k> :m-2<CR>gv=gv
 
+    " Clear highlghted search (handy!)
+    nmap <silent> ,/ :nohlsearch<CR>
+
     " Decrement|increment
     nnoremap + <C-a>
     nnoremap - <C-x>
