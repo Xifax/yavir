@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
     "Plug 'vim-scripts/YankRing.vim', {'on': 'YRShow'}
     " Unix bindings
     Plug 'tpope/vim-eunuch'
+    " Zen room
+    Plug 'junegunn/goyo.vim'
     " Readline key bindings
     Plug 'tpope/vim-rsi'
     " Context aware pasting (indentation)
