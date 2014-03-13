@@ -33,6 +33,9 @@
         " be iMproved
         set nocompatible
 
+        " always use sh shell
+        set shell=/bin/sh
+
         " set plugin manager
         let pluginManager = 'plug'
 

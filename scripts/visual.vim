@@ -14,7 +14,7 @@
         if randomTheme == 1
             let themes = ['badwolf', 'hybrid', 'gruvbox', 'darkspectrum',
                         \ 'molokai', 'smyk', 'BusyBee', 'rdark', 'mango',
-                        \ 'getafe', 'dracula']
+                        \ 'getafe']
 python << endpython
 import vim
 import random
