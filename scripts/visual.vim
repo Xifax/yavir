@@ -13,7 +13,7 @@
 
         if randomTheme == 1
             let themes = ['badwolf', 'hybrid', 'gruvbox', 'darkspectrum',
-                        \ 'molokai', 'smyk', 'BusyBee', 'rdark', 'mango',
+                        \ 'molokai', 'smyck', 'BusyBee', 'rdark', 'mango',
                         \ 'getafe']
 python << endpython
 import vim
@@ -33,25 +33,25 @@ endpython
 
         "" Personal favorites:
         " One of the best
-        set guifont=PragmataPro\ 14
+        set guifont=PragmataPro\ 13
 
         "" Consolas open source clone (some unicode symbols are missing)
-        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 15
+        "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
 
         "" Unholy union
-        "set guifont=Ricty\ 15
+        "set guifont=Ricty\ 14
 
         "" Ubuntu goodness
-        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 16
+        "set guifont=Ubuntu\ Mono\ for\ Powerline\ 15
 
         "" Adobe goodness (very nice!)
-        "set guifont=Source\ Code\ Pro\ for\ Powerline\ 15
+        "set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
 
         "" Apple goodness
-        " set guifont=Menlo\ for\ Powerline\ 15"
+        " set guifont=Menlo\ for\ Powerline\ 14"
 
         "" Propietary MS goodness (mmm, tasty!)
-        "set guifont=Consolas\ 15
+        "set guifont=Consolas\ 14
 
 
         """ Other recommended fonts: """
