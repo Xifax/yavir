@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'L9'
     " Relative line numbering
     Plug 'myusuf3/numbers.vim'
-    " auto-surround
+    " work with 'surroundings'
     Plug 'surround.vim'
     " Killring
     "Plug 'vim-scripts/YankRing.vim', {'on': 'YRShow'}
@@ -51,7 +51,9 @@ call plug#begin('~/.vim/plugged')
     " displaying signs for version control, errors and fixes
     Plug 'quickfixsigns'
     " Syntax-aware auto closing quotes, brackets, etc
-    Plug 'Raimondi/delimitMate'
+    " Plug 'Raimondi/delimitMate'
+    " Auto-pairs
+    Plug 'jiangmiao/auto-pairs'
     " Tags, tags, tags!
     Plug 'Tagbar'
     " Shell inside
