@@ -51,9 +51,9 @@ call plug#begin('~/.vim/plugged')
     " displaying signs for version control, errors and fixes
     Plug 'quickfixsigns'
     " Syntax-aware auto closing quotes, brackets, etc
-    " Plug 'Raimondi/delimitMate'
+    Plug 'Raimondi/delimitMate'
     " Auto-pairs
-    Plug 'jiangmiao/auto-pairs'
+    " Plug 'jiangmiao/auto-pairs'
     " Tags, tags, tags!
     Plug 'Tagbar'
     " Shell inside

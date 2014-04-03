@@ -184,6 +184,6 @@
     nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
     " Auto pairs toggle on/off
-    let g:AutoPairsShortcutToggle = '<C-A>'
+    " let g:AutoPairsShortcutToggle = '<C-A>'
 
 " }}}
