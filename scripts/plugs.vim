@@ -8,8 +8,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'mhinz/vim-startify'
     " Improved text objects"
     Plug 'paradigm/TextObjectify'
+    " Exchange objects
+    Plug 'tommcdo/vim-exchange'
     " github interaction
     Plug 'tpope/vim-fugitive'
+    " additional functions for git
+    Plug 'airblade/vim-gitgutter'
     " colorful parenthesis
     Plug 'amdt/vim-niji'
     " vim-script lib (is it really required? TODO: remove if not)
