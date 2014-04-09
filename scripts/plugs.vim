@@ -92,7 +92,7 @@ call plug#begin('~/.vim/plugged')
     " Search in files
     Plug 'rking/ag.vim', {'on': 'Ag'}
     " File tree
-    Plug 'The-NERD-tree', {'on': ['NERDTreeToggle', 'NERDTree']}
+    Plug 'The-NERD-tree'
     " Most recent files (and much more!)
     Plug 'kien/ctrlp.vim'
     " Juggle buffers
