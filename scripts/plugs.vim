@@ -114,6 +114,7 @@ call plug#begin('~/.vim/plugged')
         Plug 'othree/html5.vim'
         Plug 'Valloric/MatchTagAlways'
         Plug 'gcmt/breeze.vim'
+        Plug 'digitaltoad/vim-jade'
     "}}}
     " CSS and preprocessors {{{
         Plug 'wavded/vim-stylus'
