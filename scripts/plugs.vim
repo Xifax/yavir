@@ -145,13 +145,13 @@ call plug#begin('~/.vim/plugged')
         "Plug 'joonty/vim-phpqa'
     "}}}
     " Python {{{
-        "Plug 'python.vim'
-        Plug 'hdima/python-syntax'
+        " Plug 'hdima/python-syntax'
         Plug 'nucleic/enaml', {'rtp': 'tools/vim/'}
         Plug 'ehamberg/vim-cute-python'
+        Plug 'klen/python-mode'
+        Plug 'davidhalter/jedi-vim'
+        "Plug 'python.vim'
         "Plug 'me-vlad/python-syntax.vim'
-        "Plug 'klen/python-mode'
-        "Plug 'davidhalter/jedi-vim'
         "Plug 'Pydiction'
     "}}}
     " Actionscript {{{

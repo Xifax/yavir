@@ -118,6 +118,9 @@
     " Remember info about open buffers on close
     set viminfo^=%
 
+    " Python mode
+    let g:pymode_breakpoint_bind = '<leader>q'
+
     " EasyMotion
     let g:EasyMotion_leader_key = '<Leader>'
     nmap s <Plug>(easymotion-s2)
@@ -153,6 +156,7 @@
 
     " Emmet (formely Zen coding)
     let g:user_emmet_expandabbr_key = '<C-e>'
+
 
     " Open new lines without going into insert mode
     nnoremap <leader>o o<esc>
