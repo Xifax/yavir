@@ -15,8 +15,7 @@
     au FileType tex set wrap
     au FileType txt set wrap
 
-    " soft tabs as 2 spaces for python, ruby, js, coffee, css and so on
-    au FileType python setl sw=2 sts=2
+    " soft tabs as 2 spaces for ruby, js, coffee, css and so on
     au FileType ruby setl sw=2 sts=2
     au FileType html,xhtml,htmldjango,haml setl sw=2 sts=2
     au FileType sass,scss,css setl sw=2 sts=2

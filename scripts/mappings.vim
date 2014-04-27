@@ -142,6 +142,9 @@
     map <leader>hf :BreezeJumpF<CR>
     map <leader>hb :BreezeJumpB<CR>
 
+    " Delete surrounding spaces (vim-surround-like)
+    nnoremap ds<space> F<space>xf<space>x
+
     " Fugitive
     map <leader>gc :Gcommit<CR>
     map <leader>gs :Gstatus<CR>
