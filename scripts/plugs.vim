@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
 " Basic {{{
     " Title screen
     Plug 'mhinz/vim-startify'
+    " Async launcher
+    Plug 'tpope/vim-dispatch'
     " Improved text objects"
     Plug 'paradigm/TextObjectify'
     " Exchange objects
@@ -62,27 +64,30 @@ call plug#begin('~/.vim/plugged')
     Plug 'Tagbar'
     " Shell inside
     Plug 'Shougo/vimshell.vim', {'on': 'VimShell'}
+    " Search with google
+    Plug 'szw/vim-g'
 " }}}
 " Colorschemes {{{
     " Probably the best colorschemes ever {{{
         Plug 'altercation/vim-colors-solarized'
         Plug 'sjl/badwolf'
-        Plug 'nielsmadan/harlequin'
-        Plug 'w0ng/vim-hybrid'
         Plug 'morhetz/gruvbox'
+        " Daylerees collection (sic!)
+        Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
+        Plug 'tomasr/molokai'
+        Plug 'w0ng/vim-hybrid'
     "}}}
     " The best dark contrast colorscheme(s) {{{
         Plug 'darkspectrum'
         Plug 'chriskempson/base16-vim'
-        Plug 'tomasr/molokai'
         Plug 'rdark'
         Plug 'BusyBee'
         Plug 'jellybeans.vim'
         Plug 'goatslacker/mango.vim'
+        Plug 'nielsmadan/harlequin'
     "}}}
     " Other themes worth having {{{
         Plug 'tpope/vim-vividchalk'
-        Plug 'daylerees/colour-schemes'
         Plug 'larssmit/vim-getafe'
         Plug 'zenorocha/dracula-theme'
         Plug 'xoria256.vim'
@@ -150,10 +155,14 @@ call plug#begin('~/.vim/plugged')
         Plug 'ehamberg/vim-cute-python'
         Plug 'klen/python-mode'
         Plug 'davidhalter/jedi-vim'
+        Plug 'jmcomets/vim-pony'
         "Plug 'python.vim'
         "Plug 'me-vlad/python-syntax.vim'
         "Plug 'Pydiction'
     "}}}
+    " Java, Android {{{
+        Plug 'hsanson/vim-android'
+    " }}}
     " Actionscript {{{
         "Plug 'Flex-4'
     "}}}
@@ -203,7 +212,7 @@ call plug#begin('~/.vim/plugged')
     " Draw ASCII stuff
     Plug 'DrawIt'
     " Manage encoding
-    Plug 'FencView.vim'
+    Plug 'mbbill/fencview'
 "}}}
 
 call plug#end()

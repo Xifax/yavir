@@ -11,9 +11,9 @@
     " Switching to light version in case of gui
     if has("gui_running")
 
+        " Selected themes list
         if randomTheme == 1
-            let themes = ['badwolf', 'hybrid', 'gruvbox', 'darkspectrum',
-                        \ 'molokai', 'smyck', 'getafe']
+            let themes = ['badwolf', 'hybrid', 'gruvbox', 'molokai', 'smyck']
 python << endpython
 import vim
 import random
@@ -32,7 +32,7 @@ endpython
 
         "" Personal favorites:
         " One of the best
-        set guifont=PragmataPro\ 13
+        set guifont=PragmataPro\ 12
 
         "" Consolas open source clone (some unicode symbols are missing)
         "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14

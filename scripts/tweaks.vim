@@ -64,4 +64,7 @@
         \ 'php' : 1,
         \}
 
+    " Android SDK and options
+    let g:android_sdk_path = '/opt/android-sdk'
+
 " }}}
